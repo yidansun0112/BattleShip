@@ -1,0 +1,5 @@
+package edu.duke.ys303.battleship;
+
+public interface Ship<T> {
+
+}
