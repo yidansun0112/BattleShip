@@ -1,0 +1,77 @@
+package edu.duke.ys303.battleship;
+
+public class Coordinate {
+  private final int row;
+  private final int column;
+
+  /**
+   * Getter for row.
+   *
+   * @return row
+   */
+  public int getRow() {
+    return row;
+  }
+
+  /**
+   * Getter for column.
+   *
+   * @return column
+   */
+  public int getColumn() {
+    return column;
+  }
+
+  /**
+   * Constructor for Coordinate class.
+   *
+   * @param r value of row
+   * @param c value of column
+   */
+  public Coordinate(int r, int c) {
+    row = r;
+    column = c;
+  }
+
+
+
+
+
+  
+  /**
+   *Override equals for Coordinate class.
+   *
+   *@param o object to compare
+   *@return true if equal, false else.
+   */
+  @Override
+  public boolean equals(Object o){
+    if(o.getClass().equals(getClass())){
+      Coordinate c=(Coordinate)o;
+      return row==c.row&&column==c.column;
+    }
+    return false;
+  }
+
+  /**
+   * Override toString() for Coordinate class.
+   *
+   * @return String of the coordinate.
+   */
+  @Override
+  public String toString() {
+    return "(" + row + "," + column + ")";
+  }
+
+  /**
+   * Override hashCode() for Coordinate class.
+   *
+   * Take use of hashcode of String class.
+   *
+   * @return hashCode for Coordinate class.
+   */
+  @Override
+  public int hashCode() {
+    return toString().hashCode();
+  }
+}

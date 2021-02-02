@@ -1,0 +1,22 @@
+package edu.duke.ys303.battleship;
+
+/**
+ *Interface of basic Board
+ */
+
+public interface Board {
+
+  /**
+   *
+   */
+  public int getWidth();
+  public int getHeight();
+}
+
+
+
+
+
+
+
+
