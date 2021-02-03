@@ -34,6 +34,17 @@ public class Placement {
   }
 
   /**
+   * Consturctor of Placement.
+   *
+   * @param String s
+   */
+  public Placement(String s) {
+    Coordinate c = new Coordinate(s.substring(0, 2));
+    where = c;
+    orientation = Character.toUpperCase(s.charAt(2));
+  }
+
+  /**
    * Override toString() method.
    *
    * @return String of Placement
@@ -69,5 +80,5 @@ public class Placement {
     }
     return false;
   }
-  
+
 }

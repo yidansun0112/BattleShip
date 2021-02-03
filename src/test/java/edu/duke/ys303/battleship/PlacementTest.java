@@ -11,6 +11,10 @@ public class PlacementTest {
     Placement p1 = new Placement(c1, 'V');
     assertEquals(c1, p1.getWhere());
     assertEquals('V', p1.getOrientation());
+    Placement p2 = new Placement("A3V");
+    Coordinate c2=new Coordinate(0,3);
+    assertEquals(c2, p2.getWhere());
+    assertEquals('V', p2.getOrientation());
   }
 
   @Test
