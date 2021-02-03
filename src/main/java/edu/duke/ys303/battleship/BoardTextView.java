@@ -50,14 +50,27 @@ public class BoardTextView {
    */
   public String displayMyOwnBoard() {
     String display = this.makeHeader();
-    for (int i = 0; i < toDisplay.getHeight(); i++) {
-      display += (Character.toString('A' + i) + " ");
-      for (int j = 1; j < toDisplay.getWidth(); j++) {
-        display += " |";
+    for (int row = 0; row < toDisplay.getHeight(); row++) {
+      display += (Character.toString('A' + row))+" ";
+      for (int column = 0; column < toDisplay.getWidth(); column++) {
+        Coordinate c = new Coordinate(row, column);
+        Character cr = toDisplay.whatIsAt(c);
+        if (cr != null) {
+          display += cr;
+        } else {
+          display += " ";
+        }
+        if(column<toDisplay.getWidth()-1){
+          display += "|";  
+        }
       }
-      display += ("  " + Character.toString('A' + i) + "\n");
+      display += (" " + Character.toString('A' + row) + "\n");
     }
     display += this.makeHeader();
     return display;
   }
 }
+
+
+
+
