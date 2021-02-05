@@ -34,24 +34,24 @@ public class BattleShipBoardTest {
   }
 
   @Test
-    public void test_whatIsAt_and_addShip(){
-      BattleShipBoard<Character> b=new BattleShipBoard<Character>(3,3);
-      Character[][] expect=new Character[3][3];
-      checkWhatIsAtBoard(b, expect);
-      Coordinate c1=new Coordinate(0,0);
-      Coordinate c2=new Coordinate(0,2);
-      Coordinate c3=new Coordinate(1,1);
-      Ship<Character> s1=new BasicShip(c1);
-      Ship<Character> s2=new BasicShip(c2);
-      Ship<Character> s3=new BasicShip(c3);
-      boolean r1=b.tryAddShip(s1);
-      assertEquals(true,r1);
-      expect[0][0]='s';
-      boolean r2=b.tryAddShip(s2);
-      assertEquals(true,r2);
-      expect[0][2]='s';
-      b.tryAddShip(s3);
-      expect[1][1]='s';
-      checkWhatIsAtBoard(b,expect);
-    }
+  public void test_whatIsAt_and_addShip() {
+    BattleShipBoard<Character> b = new BattleShipBoard<Character>(3, 3);
+    Character[][] expect = new Character[3][3];
+    checkWhatIsAtBoard(b, expect);
+    Coordinate c1 = new Coordinate(0, 0);
+    Coordinate c2 = new Coordinate(0, 2);
+    Coordinate c3 = new Coordinate(1, 1);
+    Ship<Character> s1 = new RectangleShip<Character>(c1, 's', '*');
+    Ship<Character> s2 = new RectangleShip<Character>(c2, 's', '*');
+    Ship<Character> s3 = new RectangleShip<Character>(c3, 's', '*');
+    boolean r1 = b.tryAddShip(s1);
+    assertEquals(true, r1);
+    expect[0][0] = 's';
+    boolean r2 = b.tryAddShip(s2);
+    assertEquals(true, r2);
+    expect[0][2] = 's';
+    b.tryAddShip(s3);
+    expect[1][1] = 's';
+    checkWhatIsAtBoard(b, expect);
+  }
 }

@@ -17,11 +17,11 @@ public class App {
   final PrintStream out;
 
   /**
-   *Constructor for App
+   * Constructor for App
    *
-   *@param Board to play with
-   *@param Reader for input
-   *@param PrintSteeam for output
+   * @param Board       to play with
+   * @param Reader      for input
+   * @param PrintSteeam for output
    */
   public App(Board<Character> theBoard, Reader inputSource, PrintStream out) {
     this.theBoard = theBoard;
@@ -31,12 +31,14 @@ public class App {
   }
 
   /**
-   *Give out a prompt, and receive a placement from input.
+   * Give out a prompt, and receive a placement from input.
    *
-   *@param String prompt to ask for input.
-   *@return a Placement.
-   *@throws IOException when Input String is in wrong format. Input String should of length three. The first character is an UpperLetter, second be a number, and third be an UpperLetter.   
-  */
+   * @param String prompt to ask for input.
+   * @return a Placement.
+   * @throws IOException when Input String is in wrong format. Input String should
+   *                     of length three. The first character is an UpperLetter,
+   *                     second be a number, and third be an UpperLetter.
+   */
   public Placement readPlacement(String prompt) throws IOException {
     out.println(prompt);
     String s = inputReader.readLine();
@@ -44,22 +46,24 @@ public class App {
   }
 
   /**
-   *Readin a String, construct a placement and place it on the board.
+   * Readin a String, construct a placement and place it on the board.
    *
-   *@throws IOException when Input String is in wrong format. Input String should of length three. The first character is an UpperLetter, second be a number, and third be an UpperLetter.
+   * @throws IOException when Input String is in wrong format. Input String should
+   *                     of length three. The first character is an UpperLetter,
+   *                     second be a number, and third be an UpperLetter.
    */
-  public void doOnePlacement() throws IOException{
+  public void doOnePlacement() throws IOException {
     Placement p = readPlacement("Where would you like to put your ship?");
-    Ship<Character> s = new BasicShip(p.getWhere());
+    Ship<Character> s = new RectangleShip<Character>(p.getWhere(), 's', '*');
     theBoard.tryAddShip(s);
-    BoardTextView view=new BoardTextView(theBoard);
+    BoardTextView view = new BoardTextView(theBoard);
     out.println(view.displayMyOwnBoard());
   }
 
   /**
-   *Main of App
+   * Main of App
    *
-   *Make a board, put one placement, and print out the board.
+   * Make a board, put one placement, and print out the board.
    */
   public static void main(String[] args) throws IOException {
     Board<Character> b = new BattleShipBoard<Character>(10, 20);
@@ -67,11 +71,3 @@ public class App {
     app.doOnePlacement();
   }
 }
-
-
-
-
-
-
-
-
