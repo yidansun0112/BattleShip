@@ -17,6 +17,8 @@ public interface Ship<T> {
    */
   public boolean isSunk();
 
+  
+  
   /**
    * Make this ship record that it has been hit at the given coordinate. The
    * specified coordinate must be part of the ship.

@@ -36,6 +36,19 @@ public abstract class BasicShip<T> implements Ship<T> {
   }
 
   /**
+   *A helpeer function to abstract out check if Coordinate c is part of a Ship.
+   *
+   *@param Coordinate to check.
+   *@throws IllegalArgumentException when Coordinate is not part of this Ship
+   */  
+  protected void checkCoordinateInThisShip(Coordinate c) {
+    if(occupiesCoordinates(c)==false){
+      throw new IllegalArgumentException("Coordinate" + c.toString() + "is not part of this Ship.");
+    }
+  }
+  
+  
+  /**
    *Override method of occupies. Indicate whether this ship occupies a Coordinate.
    *
    *@param A Coordinate to check.
@@ -46,31 +59,71 @@ public abstract class BasicShip<T> implements Ship<T> {
     return myPieces.containsKey(where);
   }
 
+   /**
+   * Check if this ship has been hit in all of its locations meaning it has been
+   * sunk.
+   * 
+   * @return true if this ship has been sunk, false otherwise.
+   */
   @Override
   public boolean isSunk() {
-    // TODO Auto-generated method stub
-    return false;
+    for(Coordinate c:myPieces.keySet()){
+      if(!wasHitAt(c)){
+        return false;
+      }
+    }
+    return true;
   }
 
+  /**
+   * Make this ship record that it has been hit at the given coordinate. The
+   * specified coordinate must be part of the ship.
+   * 
+   * @param where specifies the coordinates that were hit.
+   * @throws IllegalArgumentException if where is not part of the Ship
+   */
   @Override
   public void recordHitAt(Coordinate where) {
-    // TODO Auto-generated method stub
-
+    checkCoordinateInThisShip(where);
+    myPieces.replace(where, true);
   }
 
+  /**
+   * Check if this ship was hit at the specified coordinates. The coordinates must
+   * be part of this Ship.
+   * 
+   * @param where is the coordinates to check.
+   * @return true if this ship as hit at the indicated coordinates, and false
+   *         otherwise.
+   * @throws IllegalArgumentException if the coordinates are not part of this
+   *                                  ship.
+   */
   @Override
   public boolean wasHitAt(Coordinate where) {
-    // TODO Auto-generated method stub
-    return false;
+    checkCoordinateInThisShip(where);
+    return myPieces.get(where);
   }
 
-  
+  /**
+   * Return the view-specific information at the given coordinate. This coordinate
+   * must be part of the ship.
+   * 
+   * @param where is the coordinate to return information for
+   * @throws IllegalArgumentException if where is not part of the Ship
+   * @return The view-specific information at that coordinate.
+   */
   @Override
   public T getDisplayInfoAt(Coordinate where) {
-    //  TODO this is not right We need to
-    //  look up the hit status of this coordinate
-
-    return myDisplayInfo.getInfo(where, false);
+   //  look up the hit status of this coordinate
+    checkCoordinateInThisShip(where);
+    return myDisplayInfo.getInfo(where, wasHitAt(where));
   }
-
 }
+
+
+
+
+
+
+
+
