@@ -61,7 +61,7 @@ public class RectangleShipTest {
 
   @Test
   public void test_display_info(){
-    RectangleShip<Character> ship = new RectangleShip<Character>("submarine",new Coordinate(1, 1), 1, 3, 's', '*');
+    RectangleShip<Character> ship = new RectangleShip<Character>("submarin"new Coordinate(1, 1), 1, 3, 's', '*');
     Coordinate c1 = new Coordinate(1, 1);
     Coordinate c2 = new Coordinate(1, 2);
     Coordinate c3 = new Coordinate(3, 3);
@@ -71,8 +71,3 @@ public class RectangleShipTest {
     assertEquals('s',ship.getDisplayInfoAt(c2));
   }    
 }
-
-
-
-
-

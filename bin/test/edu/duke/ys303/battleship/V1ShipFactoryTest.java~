@@ -1,0 +1,19 @@
+package edu.duke.ys303.battleship;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+public class V1ShipFactoryTest {
+  @Test
+  public void test_make_ships() {
+
+  }
+
+  private void checkShip(Ship<Character> testShip, String expectedName,
+                         char expectedLetter, Coordinate... expectedLocs){
+    
+  }
+
+
+}

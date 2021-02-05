@@ -7,6 +7,19 @@ import java.util.HashSet;
  * ship.
  */
 public class RectangleShip<T> extends BasicShip<T> {
+  /**
+   * Name of this Ship.
+   */
+  private final String name;
+
+  /**
+   * Name getter.
+   *
+   * @return String name.
+   */
+  public String getName() {
+    return name;
+  }
 
   /**
    * Convenience constructor of RectangleShip.
@@ -18,8 +31,8 @@ public class RectangleShip<T> extends BasicShip<T> {
    *                   hit.
    * @param T          onHit indicates what to show when this Coordinate is hit.
    */
-  public RectangleShip(Coordinate upperLeft, int width, int height, T data, T onHit) {
-    this(upperLeft, width, height, new SimpleShipDisplayInfo<T>(data, onHit));
+  public RectangleShip(String name, Coordinate upperLeft, int width, int height, T data, T onHit) {
+    this(name, upperLeft, width, height, new SimpleShipDisplayInfo<T>(data, onHit));
   }
 
   /**
@@ -31,7 +44,7 @@ public class RectangleShip<T> extends BasicShip<T> {
    * @param T          onHit indicates what to show when this Coordinate is hit.
    */
   public RectangleShip(Coordinate upperLeft, T data, T onHit) {
-    this(upperLeft, 1, 1, data, onHit);
+    this("testship", upperLeft, 1, 1, data, onHit);
   }
 
   /**
@@ -43,8 +56,9 @@ public class RectangleShip<T> extends BasicShip<T> {
    * @param int                height indicates height of the Ship.
    * @param ShipDisplayInfo<T> s indicates how to show this Ship.
    */
-  public RectangleShip(Coordinate upperLeft, int width, int height, ShipDisplayInfo<T> s) {
+  public RectangleShip(String name, Coordinate upperLeft, int width, int height, ShipDisplayInfo<T> s) {
     super(makeCoords(upperLeft, width, height), s);
+    this.name = name;
   }
 
   /**
