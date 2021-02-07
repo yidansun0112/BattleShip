@@ -52,26 +52,30 @@ public class BattleShipBoard<T> implements Board<T> {
   }
 
   /**
-   * Convenience constructor for BattleShipBoard. Pass in null to RuleChecker.
-   * 
+   * Convenience constructor for BattleShipBoard. Pass combined two ruleCheckers
+   * to placementCheck.
+   *
    * @param w is the width of the newly constructed board.
    * @param h is the height of the newly constructed board.
    * @throws IllegalArgumentException if the width or height are less than or
    *                                  equal to zero.
    */
   public BattleShipBoard(int w, int h) {
-    this(w, h, new InBoundsRuleChecker<T>(null));
+    this(w, h, new InBoundsRuleChecker<T>(new NoCollisionRuleChecker<T>(null)));
   }
 
   /**
-   * Try to add a ship into ArrayList myShips
+   * Add a ship into ArrayList myShips when ruleChecker returns true.
    *
-   * @param toAdd A ship to add.
-   * @return true when add successfully.
+   * @param Ship<T> the ship to add.
+   * @return true when add successfully, false else.
    */
   public boolean tryAddShip(Ship<T> toAdd) {
-    myShips.add(toAdd);
-    return true;
+    if (placementChecker.checkPlacement(toAdd, this)) {
+      myShips.add(toAdd);
+      return true;
+    }
+    return false;
   }
 
   /**

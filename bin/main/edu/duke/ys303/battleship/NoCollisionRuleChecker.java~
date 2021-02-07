@@ -1,5 +1,7 @@
 package edu.duke.ys303.battleship;
 
+import java.util.HashSet;
+
 /**
  * This class extends from PlacementRuleChecker and handles no collision check.
  */
@@ -14,10 +16,13 @@ public class NoCollisionRuleChecker<T> extends PlacementRuleChecker<T> {
    */
   @Override
   protected boolean checkMyRule(Ship<T> theShip, Board<T> theBoard) {
-    HashSet<Coordinate> s=theShip.myPieces.KeySet();
-    for(Coordinate c:s){
-      if()
+    Iterable<Coordinate> cs = theShip.getCoordinates();
+    for (Coordinate c : cs) {
+      if (theBoard.whatIsAt(c) != null) {
+        return false;
+      }
     }
+    return true;
   }
 
   /**
@@ -29,4 +34,3 @@ public class NoCollisionRuleChecker<T> extends PlacementRuleChecker<T> {
     super(next);
   }
 }
-

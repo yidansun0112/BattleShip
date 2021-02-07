@@ -53,5 +53,6 @@ public class BattleShipBoardTest {
     b.tryAddShip(s3);
     expect[1][1] = 's';
     checkWhatIsAtBoard(b, expect);
+    assertEquals(false,b.tryAddShip(s3));
   }
 }
