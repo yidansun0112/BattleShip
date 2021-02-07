@@ -1,0 +1,27 @@
+package edu.duke.ys303.battleship;
+
+/**
+ * This class extends from PlacementRuleChecker and handles bound check.
+ */
+public class InBoundsRuleChecker<T> extends PlacementRuleChecker<T> {
+
+  @Override
+  protected boolean checkMyRule(Ship<T> theShip, Board<T> theBoard) {
+    int width = theBoard.getWidth();
+    int height = theBoard.getHeight();
+    Iterable<Coordinate> s = theShip.getCoordinates();
+    for (Coordinate c : s) {
+      if (c.getRow() < 0 || c.getRow() >= height) {
+        return false;
+      }
+      if (c.getColumn() < 0 || c.getColumn() >= width) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public InBoundsRuleChecker(PlacementRuleChecker<T> next) {
+    super(next);
+  }
+}

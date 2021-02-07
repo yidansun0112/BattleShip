@@ -3,29 +3,39 @@ package edu.duke.ys303.battleship;
 import java.util.HashMap;
 
 /**
- *This class implements from interface Ship. It handles information of a basic ship
+ * This class implements from interface Ship. It handles information of a basic
+ * ship
  */
 public abstract class BasicShip<T> implements Ship<T> {
 
   /**
-   *A HashMap to map Coordinates to Boolean to indicate status of a Ship.
+   * A HashMap to map Coordinates to Boolean to indicate status of a Ship.
    *
-   *null: This Coordinate is not in the ship.
-   *false: This Coordinate is in the Ship, and not hit.
-   *true: This Coordinate is in the Ship and is hit.
+   * null: This Coordinate is not in the ship. false: This Coordinate is in the
+   * Ship, and not hit. true: This Coordinate is in the Ship and is hit.
    */
   protected HashMap<Coordinate, Boolean> myPieces;
 
   /**
-   *DisplayInfo class indicates how to display this ship.
+   * DisplayInfo class indicates how to display this ship.
    */
   protected ShipDisplayInfo<T> myDisplayInfo;
 
   /**
-   *Constructor of BasicShip.
+   * Get all of the Coordinates that this Ship occupies.
+   * 
+   * @return An Iterable with the coordinates that this Ship occupies
+   */
+  @Override
+  public Iterable<Coordinate> getCoordinates() {
+    return myPieces.keySet();
+  }
+
+  /**
+   * Constructor of BasicShip.
    *
-   *@param Set of Coordinates for the Ship.
-   *@param ShipDisplayInfo<T> indicates how to display this Ship.  
+   * @param Set                of Coordinates for the Ship.
+   * @param ShipDisplayInfo<T> indicates how to display this Ship.
    */
   public BasicShip(Iterable<Coordinate> where, ShipDisplayInfo<T> myDisplayInfo) {
     myPieces = new HashMap<Coordinate, Boolean>();
@@ -36,30 +46,30 @@ public abstract class BasicShip<T> implements Ship<T> {
   }
 
   /**
-   *A helpeer function to abstract out check if Coordinate c is part of a Ship.
+   * A helpeer function to abstract out check if Coordinate c is part of a Ship.
    *
-   *@param Coordinate to check.
-   *@throws IllegalArgumentException when Coordinate is not part of this Ship
-   */  
+   * @param Coordinate to check.
+   * @throws IllegalArgumentException when Coordinate is not part of this Ship
+   */
   protected void checkCoordinateInThisShip(Coordinate c) {
-    if(occupiesCoordinates(c)==false){
+    if (occupiesCoordinates(c) == false) {
       throw new IllegalArgumentException("Coordinate" + c.toString() + "is not part of this Ship.");
     }
   }
-  
-  
+
   /**
-   *Override method of occupies. Indicate whether this ship occupies a Coordinate.
+   * Override method of occupies. Indicate whether this ship occupies a
+   * Coordinate.
    *
-   *@param A Coordinate to check.
-   *@return true if the ship contains this Coordinate, false otherwise.
+   * @param A Coordinate to check.
+   * @return true if the ship contains this Coordinate, false otherwise.
    */
   @Override
   public boolean occupiesCoordinates(Coordinate where) {
     return myPieces.containsKey(where);
   }
 
-   /**
+  /**
    * Check if this ship has been hit in all of its locations meaning it has been
    * sunk.
    * 
@@ -67,8 +77,8 @@ public abstract class BasicShip<T> implements Ship<T> {
    */
   @Override
   public boolean isSunk() {
-    for(Coordinate c:myPieces.keySet()){
-      if(!wasHitAt(c)){
+    for (Coordinate c : myPieces.keySet()) {
+      if (!wasHitAt(c)) {
         return false;
       }
     }
@@ -114,16 +124,8 @@ public abstract class BasicShip<T> implements Ship<T> {
    */
   @Override
   public T getDisplayInfoAt(Coordinate where) {
-   //  look up the hit status of this coordinate
+    // look up the hit status of this coordinate
     checkCoordinateInThisShip(where);
     return myDisplayInfo.getInfo(where, wasHitAt(where));
   }
 }
-
-
-
-
-
-
-
-

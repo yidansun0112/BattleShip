@@ -1,6 +1,14 @@
 package edu.duke.ys303.battleship;
 
 public interface Ship<T> {
+
+  /**
+   * Get all of the Coordinates that this Ship occupies.
+   * 
+   * @return An Iterable with the coordinates that this Ship occupies
+   */
+  public Iterable<Coordinate> getCoordinates();
+
   /**
    * Check if this ship occupies the given coordinate.
    * 
@@ -17,8 +25,6 @@ public interface Ship<T> {
    */
   public boolean isSunk();
 
-  
-  
   /**
    * Make this ship record that it has been hit at the given coordinate. The
    * specified coordinate must be part of the ship.
@@ -50,10 +56,11 @@ public interface Ship<T> {
    */
   public T getDisplayInfoAt(Coordinate where);
 
- /**
+  /**
    * Get the name of this Ship, such as "submarine".
+   * 
    * @return the name of this ship
    */
- public String getName();
+  public String getName();
 
 }

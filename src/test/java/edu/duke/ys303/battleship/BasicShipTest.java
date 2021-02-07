@@ -13,4 +13,5 @@ public class BasicShipTest {
     assertEquals(false, s1.myPieces.get(c1));
     assertEquals(null, s1.myPieces.get(c2));
   }
+  
 }
