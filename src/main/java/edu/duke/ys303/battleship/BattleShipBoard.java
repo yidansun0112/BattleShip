@@ -75,10 +75,11 @@ public class BattleShipBoard<T> implements Board<T> {
   }
 
   /**
-   * Takes a Coordinate, and sees if any ship occupies that coordinate.
+   * Takes a Coordinate, and see if any ship occupies that coordinate.
    *
-   * @param A coordinate to check.
-   * @return dispalyInfo of the ship, if one is found. NULL, when no one is found.
+   * @param Cooridinate to check.
+   * @return SimpleDisplayInfo of the ship, if one is found. NULL, when no one is
+   *         found.
    */
   public T whatIsAt(Coordinate where) {
     for (Ship<T> s : myShips) {
