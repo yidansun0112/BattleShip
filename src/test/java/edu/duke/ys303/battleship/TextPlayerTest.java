@@ -1,0 +1,52 @@
+package edu.duke.ys303.battleship;
+
+
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.StringReader;
+
+import java.io.ByteArrayOutputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import org.junit.jupiter.api.Test;
+
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class TextPlayerTest {
+
+  private TextPlayer createTextPlayer(int w, int h, String inputData, OutputStream bytes) {
+    BufferedReader input = new BufferedReader(new StringReader(inputData));
+    PrintStream output = new PrintStream(bytes, true);
+    Board<Character> board = new BattleShipBoard<Character>(w, h);
+    V1ShipFactory shipFactory = new V1ShipFactory();
+    return new TextPlayer("A", board, input, output, shipFactory);
+  }
+
+  @Test
+  void test_read_placement() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 20, "B2V\nC8H\na4v\n", bytes);
+    String prompt = "Please enter a location for a ship:";
+    Placement[] expected = new Placement[3];
+    expected[0] = new Placement(new Coordinate(1, 2), 'V');
+    expected[1] = new Placement(new Coordinate(2, 8), 'H');
+    expected[2] = new Placement(new Coordinate(0, 4), 'V');
+    for (int i = 0; i < expected.length; i++) {
+      Placement p = player.readPlacement(prompt);
+      assertEquals(p, expected[i]); // did we get the right Placement back
+      assertEquals(prompt + "\n", bytes.toString()); // should have printed prompt and newline
+      bytes.reset(); // clear out bytes for next time around
+    }
+  }
+
+  @Test
+  public void rest_do_one_placement() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(4, 3, "A1V\n", bytes);
+    String prompt = "Player A Where do you want to place a Destroyer?\n";
+    String e1 = "  0|1|2|3\n" + "A  |d| |  A\n" + "B  |d| |  B\n" + "C  |d| |  C\n" + "  0|1|2|3\n\n";
+    player.doOnePlacement();
+    assertEquals(prompt + e1, bytes.toString());
+  }
+}

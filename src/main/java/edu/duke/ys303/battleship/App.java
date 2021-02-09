@@ -6,70 +6,46 @@ package edu.duke.ys303.battleship;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
-import java.io.Reader;
+
 
 public class App {
+  TextPlayer player1;
+  TextPlayer player2;
 
-  final Board<Character> theBoard;
-  final BoardTextView view;
-  final BufferedReader inputReader;
-  final PrintStream out;
-  final AbstractShipFactory<Character> shipFactory;
-  
   /**
    * Constructor for App
    *
-   * @param Board       to play with
-   * @param Reader      for input
-   * @param PrintSteeam for output
+   *@param TextPlayer to initialize player1
+   *@param TextPlayer to initialize player2
    */
-  public App(Board<Character> theBoard, Reader inputSource, PrintStream out) {
-    this.theBoard = theBoard;
-    this.view = new BoardTextView(theBoard);
-    this.inputReader = new BufferedReader(inputSource);
-    this.out = out;
-    this.shipFactory = new V1ShipFactory();
+  public App(TextPlayer p1, TextPlayer p2) {
+    player1 = p1;
+    player2 = p2;
+
   }
 
   /**
-   * Give out a prompt, and receive a placement from input.
+   * Do placement for player1 and player2.
    *
-   * @param String prompt to ask for input.
-   * @return a Placement.
-   * @throws IOException when Input String is in wrong format. Input String should
-   *                     of length three. The first character is an UpperLetter,
-   *                     second be a number, and third be an UpperLetter.
+   *@throws IOException when placement is not valid.
    */
-  public Placement readPlacement(String prompt) throws IOException {
-    out.println(prompt);
-    String s = inputReader.readLine();
-    return new Placement(s);
-  }
-
-  /**
-   * Readin a String, construct a placement and place it on the board.
-   *
-   * @throws IOException when Input String is in wrong format. Input String should
-   *                     of length three. The first character is an UpperLetter,
-   *                     second be a number, and third be an UpperLetter.
-   */
-  public void doOnePlacement() throws IOException {
-    Placement p = readPlacement("Where would you like to put your ship?");
-    Ship<Character> s  = shipFactory.makeDestroyer(p);
-    theBoard.tryAddShip(s);
-    BoardTextView view = new BoardTextView(theBoard);
-    out.println(view.displayMyOwnBoard());
+  public void doPlacementPhase() throws IOException {
+    player1.doPlacementPhase();
+    player2.doPlacementPhase();
   }
 
   /**
    * Main of App
    *
-   * Make a board, put one placement, and print out the board.
+   * Make a board, put one placement for player1 and player2, and print out the board.
    */
   public static void main(String[] args) throws IOException {
-    Board<Character> b = new BattleShipBoard<Character>(10, 20);
-    App app = new App(b, new InputStreamReader(System.in), System.out);
-    app.doOnePlacement();
+    Board<Character> b1 = new BattleShipBoard<Character>(10, 20);
+    Board<Character> b2 = new BattleShipBoard<Character>(10, 20);
+    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+    V1ShipFactory factory = new V1ShipFactory();
+    App app = new App(new TextPlayer("A", b1, input, System.out, factory),
+        new TextPlayer("B", b2, input, System.out, factory));
+    app.doPlacementPhase();
   }
 }
