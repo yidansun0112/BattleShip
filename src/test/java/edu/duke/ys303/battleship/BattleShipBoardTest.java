@@ -44,15 +44,15 @@ public class BattleShipBoardTest {
     Ship<Character> s1 = new RectangleShip<Character>(c1, 's', '*');
     Ship<Character> s2 = new RectangleShip<Character>(c2, 's', '*');
     Ship<Character> s3 = new RectangleShip<Character>(c3, 's', '*');
-    boolean r1 = b.tryAddShip(s1);
-    assertEquals(true, r1);
+   String r1 = b.tryAddShip(s1);
+   assertEquals(null, r1);
     expect[0][0] = 's';
-    boolean r2 = b.tryAddShip(s2);
-    assertEquals(true, r2);
+    String r2 = b.tryAddShip(s2);
+    assertEquals(null, r2);
     expect[0][2] = 's';
     b.tryAddShip(s3);
     expect[1][1] = 's';
     checkWhatIsAtBoard(b, expect);
-    assertEquals(false,b.tryAddShip(s3));
+    assertEquals("That placement is invalid: the ship overlaps another ship.",b.tryAddShip(s3));
   }
 }

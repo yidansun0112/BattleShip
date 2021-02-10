@@ -68,14 +68,16 @@ public class BattleShipBoard<T> implements Board<T> {
    * Add a ship into ArrayList myShips when ruleChecker returns true.
    *
    * @param Ship<T> the ship to add.
-   * @return true when add successfully, false else.
+   * @return null if add successfully, a String specifies placement problem
+   *         otherwise.
    */
-  public boolean tryAddShip(Ship<T> toAdd) {
-    if (placementChecker.checkPlacement(toAdd, this)) {
+  public String tryAddShip(Ship<T> toAdd) {
+    String placementProblem = placementChecker.checkPlacement(toAdd, this);
+    if (placementProblem == null) {
       myShips.add(toAdd);
-      return true;
+      return null;
     }
-    return false;
+    return placementProblem;
   }
 
   /**

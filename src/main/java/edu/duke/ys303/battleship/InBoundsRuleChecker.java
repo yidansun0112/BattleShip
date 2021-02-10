@@ -10,22 +10,28 @@ public class InBoundsRuleChecker<T> extends PlacementRuleChecker<T> {
    *
    * @param Ship<T>  the ship to decide.
    * @param Board<T> the board to decide.
-   * @return true if the rule is obeyed, false otherwise.class
+   * @return null if the rule is obeyed, a string specifies exact problem otherwise.
    */
   @Override
-  protected boolean checkMyRule(Ship<T> theShip, Board<T> theBoard) {
+  protected String checkMyRule(Ship<T> theShip, Board<T> theBoard) {
     int width = theBoard.getWidth();
     int height = theBoard.getHeight();
     Iterable<Coordinate> s = theShip.getCoordinates();
     for (Coordinate c : s) {
-      if (c.getRow() < 0 || c.getRow() >= height) {
-        return false;
+      if (c.getRow() < 0 ) {
+        return "That placement is invalid: the ship goes off the top of the board.";
       }
-      if (c.getColumn() < 0 || c.getColumn() >= width) {
-        return false;
+      if(c.getRow() >= height){
+        return "That placement is invalid: the ship goes off the bottom of the board.";
+      }
+      if (c.getColumn() < 0 ) {
+        return "That placement is invalid: the ship goes off the left of the board.";
+      }
+      if(c.getColumn() >= width){
+        return "That placement is invalid: the ship goes off the right of the board.";
       }
     }
-    return true;
+    return null;
   }
 
   /**

@@ -39,6 +39,9 @@ public class Placement {
    * @param String s
    */
   public Placement(String s) {
+    if(s.length()!=3){
+      throw new IllegalArgumentException("Placement should be of length 3, but now is "+s.length());
+    }
     Coordinate c = new Coordinate(s.substring(0, 2));
     where = c;
     orientation = Character.toUpperCase(s.charAt(2));

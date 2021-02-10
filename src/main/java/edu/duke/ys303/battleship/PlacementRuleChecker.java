@@ -26,7 +26,7 @@ public abstract class PlacementRuleChecker<T> {
    * @param Ship<T>  the ship to check with.
    * @param Board<T> the board to check with.
    */
-  protected abstract boolean checkMyRule(Ship<T> theShip, Board<T> theBoard);
+  protected abstract String checkMyRule(Ship<T> theShip, Board<T> theBoard);
 
   /**
    * Tail recursion for chekcing all rules.
@@ -35,16 +35,17 @@ public abstract class PlacementRuleChecker<T> {
    * @param Board<T> to check with.
    * @return true if rule is obeyed, false otherwise.
    */
-  public boolean checkPlacement(Ship<T> theShip, Board<T> theBoard) {
-    if (!checkMyRule(theShip, theBoard)) {
-      return false;
+  public String checkPlacement(Ship<T> theShip, Board<T> theBoard) {
+    String placementProblem=checkMyRule(theShip,theBoard);
+    if (placementProblem!=null) {
+      return placementProblem;
     }
     // other wise, ask the rest of the chain.
     if (next != null) {
       return next.checkPlacement(theShip, theBoard);
     }
     // if there are no more rules, then the placement
-    return true;
+    return null;
   }
 
 }

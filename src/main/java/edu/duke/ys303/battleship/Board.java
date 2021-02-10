@@ -33,7 +33,7 @@ public interface Board<T> {
    *@param Ship to add
    *@return true when add successfully
    */
-  public boolean tryAddShip(Ship<T> toAdd);
+  public String tryAddShip(Ship<T> toAdd);
 }
 
 
