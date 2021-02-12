@@ -25,8 +25,10 @@ public interface Board<T> {
    *
    *@return Content in this position
    */
-  public T whatIsAt(Coordinate where);
+  public T whatIsAtForSelf(Coordinate where);
 
+  public T whatIsAtForEnemy(Coordinate where);
+  
   /**
    *General tryAddShip method for Board
    *
@@ -34,6 +36,15 @@ public interface Board<T> {
    *@return true when add successfully
    */
   public String tryAddShip(Ship<T> toAdd);
+
+  /**
+   *Search for any ship that occupies Coordinate c.
+   *If one is found, that Ship is "hit" by the attack and record.
+   *
+   *@param Coordinate to attack on.
+   *@return Ship<T> if one ship is hit, null otherwise.
+   */
+  public Ship<T> fireAt(Coordinate c);
 }
 
 

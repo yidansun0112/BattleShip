@@ -1,5 +1,7 @@
 package edu.duke.ys303.battleship;
 
+import java.util.function.Function;
+
 /**
  * This class handles textual display of a Board (i.e., converting it to a
  * string to show to the user). It supports two ways to display the Board: one
@@ -46,15 +48,16 @@ public class BoardTextView {
   /**
    * This display the Text Board.
    *
+   *@param Function<Coordinate,Character> applied to display based on self or enemy.
    * @return String of the Board text.
    */
-  public String displayMyOwnBoard() {
+  public String displayAnyBoard(Function<Coordinate, Character> getSquareFn) {
     String display = this.makeHeader();
     for (int row = 0; row < toDisplay.getHeight(); row++) {
       display += (Character.toString('A' + row))+" ";
       for (int column = 0; column < toDisplay.getWidth(); column++) {
         Coordinate c = new Coordinate(row, column);
-        Character cr = toDisplay.whatIsAt(c);
+        Character cr = getSquareFn.apply(c);
         if (cr != null) {
           display += cr;
         } else {
@@ -68,6 +71,24 @@ public class BoardTextView {
     }
     display += this.makeHeader();
     return display;
+  }
+
+  /**
+   *Display own board.
+   *
+   *@return String text display of the Board, self view.
+   */
+   public String displayMyOwnBoard() {
+    return displayAnyBoard((c)->toDisplay.whatIsAtForSelf(c));
+  }
+
+  /**
+   *Display enemy board.
+   *
+   *@return String text display of the Board, enemy view.
+   */
+  public String displayEnemyBoard() {
+    return displayAnyBoard((c)->toDisplay.whatIsAtForEnemy(c));
   }
 }
 

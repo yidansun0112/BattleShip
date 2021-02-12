@@ -21,6 +21,10 @@ public abstract class BasicShip<T> implements Ship<T> {
    */
   protected ShipDisplayInfo<T> myDisplayInfo;
 
+  protected ShipDisplayInfo<T> enemyDisplayInfo;
+
+  
+  
   /**
    * Get all of the Coordinates that this Ship occupies.
    * 
@@ -37,12 +41,13 @@ public abstract class BasicShip<T> implements Ship<T> {
    * @param Set                of Coordinates for the Ship.
    * @param ShipDisplayInfo<T> indicates how to display this Ship.
    */
-  public BasicShip(Iterable<Coordinate> where, ShipDisplayInfo<T> myDisplayInfo) {
+  public BasicShip(Iterable<Coordinate> where, ShipDisplayInfo<T> myDisplayInfo,ShipDisplayInfo<T> enemyDisplayInfo) {
     myPieces = new HashMap<Coordinate, Boolean>();
     for (Coordinate c : where) {
       myPieces.put(c, false);
     }
     this.myDisplayInfo = myDisplayInfo;
+    this.enemyDisplayInfo = enemyDisplayInfo;
   }
 
   /**
@@ -123,9 +128,16 @@ public abstract class BasicShip<T> implements Ship<T> {
    * @return The view-specific information at that coordinate.
    */
   @Override
-  public T getDisplayInfoAt(Coordinate where) {
+  public T getDisplayInfoAt(Coordinate where,boolean myShip) {
     // look up the hit status of this coordinate
     checkCoordinateInThisShip(where);
+    if(myShip){
     return myDisplayInfo.getInfo(where, wasHitAt(where));
+    }
+    else{
+      return enemyDisplayInfo.getInfo(where,wasHitAt(where));
+    }
   }
+
+  
 }

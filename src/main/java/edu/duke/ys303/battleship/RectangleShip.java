@@ -32,7 +32,7 @@ public class RectangleShip<T> extends BasicShip<T> {
    * @param T          onHit indicates what to show when this Coordinate is hit.
    */
   public RectangleShip(String name, Coordinate upperLeft, int width, int height, T data, T onHit) {
-    this(name, upperLeft, width, height, new SimpleShipDisplayInfo<T>(data, onHit));
+    this(name, upperLeft, width, height, new SimpleShipDisplayInfo<T>(data, onHit),new SimpleShipDisplayInfo<T>(null, data));
   }
 
   /**
@@ -56,8 +56,8 @@ public class RectangleShip<T> extends BasicShip<T> {
    * @param int                height indicates height of the Ship.
    * @param ShipDisplayInfo<T> s indicates how to show this Ship.
    */
-  public RectangleShip(String name, Coordinate upperLeft, int width, int height, ShipDisplayInfo<T> s) {
-    super(makeCoords(upperLeft, width, height), s);
+  public RectangleShip(String name, Coordinate upperLeft, int width, int height, ShipDisplayInfo<T> s1,ShipDisplayInfo<T> s2) {
+    super(makeCoords(upperLeft, width, height), s1,s2);
     this.name = name;
   }
 

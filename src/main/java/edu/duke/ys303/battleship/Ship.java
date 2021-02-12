@@ -54,7 +54,7 @@ public interface Ship<T> {
    * @throws IllegalArgumentException if where is not part of the Ship
    * @return The view-specific information at that coordinate.
    */
-  public T getDisplayInfoAt(Coordinate where);
+  public T getDisplayInfoAt(Coordinate where,boolean myShip);
 
   /**
    * Get the name of this Ship, such as "submarine".

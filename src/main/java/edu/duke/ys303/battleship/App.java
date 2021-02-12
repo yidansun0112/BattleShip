@@ -40,8 +40,8 @@ public class App {
    * Make a board, put one placement for player1 and player2, and print out the board.
    */
   public static void main(String[] args) throws IOException {
-    Board<Character> b1 = new BattleShipBoard<Character>(10, 20);
-    Board<Character> b2 = new BattleShipBoard<Character>(10, 20);
+    Board<Character> b1 = new BattleShipBoard<Character>(10, 20,'X');
+    Board<Character> b2 = new BattleShipBoard<Character>(10, 20,'X');
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     V1ShipFactory factory = new V1ShipFactory();
     App app = new App(new TextPlayer("A", b1, input, System.out, factory),

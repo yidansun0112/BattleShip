@@ -7,17 +7,17 @@ import org.junit.jupiter.api.Test;
 public class BattleShipBoardTest {
   @Test
   public void test_width_and_height() {
-    Board<Character> b1 = new BattleShipBoard<Character>(10, 20);
+    Board<Character> b1 = new BattleShipBoard<Character>(10, 20,'X');
     assertEquals(10, b1.getWidth());
     assertEquals(20, b1.getHeight());
   }
 
   @Test
   public void test_invalid_dimensions() {
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, 0));
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(0, 20));
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, -5));
-    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(-8, 20));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, 0,'X'));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(0, 20,'X'));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(10, -5,'X'));
+    assertThrows(IllegalArgumentException.class, () -> new BattleShipBoard<Character>(-8, 20,'X'));
   }
 
   private <T> void checkWhatIsAtBoard(BattleShipBoard<Character> b, Character[][] expect) {
@@ -28,14 +28,14 @@ public class BattleShipBoardTest {
     for (i = 0; i < h; i++) {
       for (j = 0; j < w; j++) {
         Coordinate c = new Coordinate(i, j);
-        assertEquals(expect[i][j], b.whatIsAt(c));
+        assertEquals(expect[i][j], b.whatIsAtForSelf(c));
       }
     }
   }
 
   @Test
   public void test_whatIsAt_and_addShip() {
-    BattleShipBoard<Character> b = new BattleShipBoard<Character>(3, 3);
+    BattleShipBoard<Character> b = new BattleShipBoard<Character>(3, 3,'X');
     Character[][] expect = new Character[3][3];
     checkWhatIsAtBoard(b, expect);
     Coordinate c1 = new Coordinate(0, 0);
@@ -55,4 +55,31 @@ public class BattleShipBoardTest {
     checkWhatIsAtBoard(b, expect);
     assertEquals("That placement is invalid: the ship overlaps another ship.",b.tryAddShip(s3));
   }
+
+  @Test
+  public void test_fireAt(){
+    BattleShipBoard<Character> b = new BattleShipBoard<Character>(3, 3,'X');
+    Coordinate c1 = new Coordinate(0, 0);
+    Ship<Character> s1 = new RectangleShip<Character>(c1, 's', '*');
+    b.tryAddShip(s1);
+    Ship<Character> h1=b.fireAt(c1);
+    assertSame(s1,h1);
+    assertTrue(s1.isSunk());
+    Coordinate c2=new  Coordinate(1,1);
+    Ship<Character> h2=b.fireAt(c2);
+    assertEquals(null,h2);
+    assertEquals('X',b.whatIsAtForEnemy(c2));
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+

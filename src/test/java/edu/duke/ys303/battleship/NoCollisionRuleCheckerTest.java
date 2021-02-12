@@ -10,7 +10,7 @@ public class NoCollisionRuleCheckerTest {
     V1ShipFactory f = new V1ShipFactory();
     Placement p = new Placement("B1v");
     Ship<Character> s1 = f.makeSubmarine(p);
-    Board<Character> b = new BattleShipBoard<Character>(3, 3);
+    Board<Character> b = new BattleShipBoard<Character>(3, 3,'X');
     NoCollisionRuleChecker<Character> r = new NoCollisionRuleChecker<Character>(null);
     assertEquals(null, r.checkPlacement(s1, b));
     b.tryAddShip(s1);
@@ -25,7 +25,7 @@ public class NoCollisionRuleCheckerTest {
     Ship<Character> s1 = f.makeSubmarine(p);
     NoCollisionRuleChecker<Character> r = new NoCollisionRuleChecker<Character>(null);
     InBoundsRuleChecker<Character> r2 = new InBoundsRuleChecker<Character>(r);
-    BattleShipBoard<Character> b = new BattleShipBoard<Character>(3, 3, r2);
+    BattleShipBoard<Character> b = new BattleShipBoard<Character>(3, 3, r2,'X');
     assertEquals(null, r2.checkPlacement(s1, b));
   }
 
