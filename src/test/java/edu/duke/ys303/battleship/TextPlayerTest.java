@@ -49,12 +49,20 @@ public class TextPlayerTest {
   }
 
   @Test
-  public void rest_do_one_placement() throws IOException {
+  public void test_do_one_placement() throws IOException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     TextPlayer player = createTextPlayer(4, 3, "A1V\n", bytes);
     String prompt = "Player A where do you want to place a Destroyer?\n";
     String e1 = "  0|1|2|3\n" + "A  |d| |  A\n" + "B  |d| |  B\n" + "C  |d| |  C\n" + "  0|1|2|3\n";
     player.doOnePlacement("Destroyer", (p) -> player.shipFactory.makeDestroyer(p));
     assertEquals(prompt + e1, bytes.toString());
+  }
+
+  @Test
+  public void test_isLose() throws IOException{
+     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(4, 3, "A1V\n", bytes);
+    player.doOnePlacement("Destroyer", (p) -> player.shipFactory.makeDestroyer(p));
+    assertEquals(false,player.isLose());
   }
 }

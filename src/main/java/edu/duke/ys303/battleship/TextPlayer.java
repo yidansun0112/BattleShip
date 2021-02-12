@@ -125,4 +125,13 @@ public class TextPlayer {
       doOnePlacement(shipName, shipCreationFns.get(shipName));
     }
   }
+
+  /**
+   * Check whether this player is lose by checking if all ships are sunk
+   *
+   *@return true if lose, false otherwise
+   */
+  public boolean isLose() {
+    return theBoard.allSunk();
+  }
 }

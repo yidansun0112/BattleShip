@@ -28,7 +28,7 @@ public interface Board<T> {
   public T whatIsAtForSelf(Coordinate where);
 
   public T whatIsAtForEnemy(Coordinate where);
-  
+
   /**
    *General tryAddShip method for Board
    *
@@ -45,6 +45,13 @@ public interface Board<T> {
    *@return Ship<T> if one ship is hit, null otherwise.
    */
   public Ship<T> fireAt(Coordinate c);
+
+  /**
+   *Check whether all ships on the Board are sunk
+   *
+   *@return boolean true indicates all sunk, false otherwise.
+   */
+  public boolean allSunk();
 }
 
 

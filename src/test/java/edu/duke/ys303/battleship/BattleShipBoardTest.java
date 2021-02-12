@@ -70,6 +70,21 @@ public class BattleShipBoardTest {
     assertEquals(null,h2);
     assertEquals('X',b.whatIsAtForEnemy(c2));
   }
+
+  @Test
+  public void test_allSunk(){
+    BattleShipBoard<Character> b = new BattleShipBoard<Character>(3, 3,'X');
+    Coordinate c1 = new Coordinate(0, 0);
+    Ship<Character> s1 = new RectangleShip<Character>(c1, 's', '*');
+    b.tryAddShip(s1);
+    Coordinate c2 = new Coordinate(1, 1);
+    Ship<Character> s2 = new RectangleShip<Character>(c2, 's', '*');
+    b.tryAddShip(s2);
+    b.fireAt(c1);
+    assertEquals(false,b.allSunk());
+     b.fireAt(c2);
+    assertEquals(true,b.allSunk());
+  }
 }
 
 
