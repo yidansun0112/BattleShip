@@ -78,4 +78,14 @@ public class BoardTextViewTest {
     BoardTextView v1 = new BoardTextView(b);
     assertEquals(e1,v1.displayEnemyBoard());
   }
+
+  @Test
+  public void test_display_two_board(){
+    Board<Character> a = new BattleShipBoard<Character>(10, 1,'X');
+    Board<Character> b = new BattleShipBoard<Character>(10, 1,'X');
+    BoardTextView v1=new BoardTextView(a);
+    BoardTextView v2=new BoardTextView(b);
+    String e="     Your Ocean                           Player B's Ocean\n"+"  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n"+"A  | | | | | | | | |  A                A  | | | | | | | | |  A\n"+"  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9\n";
+    assertEquals(e,v1.displayMyBoardWithEnemyNextToIt(v2,"Your Ocean","Player B's Ocean"));
+  }
 }

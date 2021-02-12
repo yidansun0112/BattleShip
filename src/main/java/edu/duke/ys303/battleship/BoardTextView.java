@@ -48,13 +48,14 @@ public class BoardTextView {
   /**
    * This display the Text Board.
    *
-   *@param Function<Coordinate,Character> applied to display based on self or enemy.
+   * @param Function<Coordinate,Character> applied to display based on self or
+   *                                       enemy.
    * @return String of the Board text.
    */
   public String displayAnyBoard(Function<Coordinate, Character> getSquareFn) {
     String display = this.makeHeader();
     for (int row = 0; row < toDisplay.getHeight(); row++) {
-      display += (Character.toString('A' + row))+" ";
+      display += (Character.toString('A' + row)) + " ";
       for (int column = 0; column < toDisplay.getWidth(); column++) {
         Coordinate c = new Coordinate(row, column);
         Character cr = getSquareFn.apply(c);
@@ -63,8 +64,8 @@ public class BoardTextView {
         } else {
           display += " ";
         }
-        if(column<toDisplay.getWidth()-1){
-          display += "|";  
+        if (column < toDisplay.getWidth() - 1) {
+          display += "|";
         }
       }
       display += (" " + Character.toString('A' + row) + "\n");
@@ -74,24 +75,55 @@ public class BoardTextView {
   }
 
   /**
-   *Display own board.
+   * Display own board.
    *
-   *@return String text display of the Board, self view.
+   * @return String text display of the Board, self view.
    */
-   public String displayMyOwnBoard() {
-    return displayAnyBoard((c)->toDisplay.whatIsAtForSelf(c));
+  public String displayMyOwnBoard() {
+    return displayAnyBoard((c) -> toDisplay.whatIsAtForSelf(c));
   }
 
   /**
-   *Display enemy board.
+   * Display enemy board.
    *
-   *@return String text display of the Board, enemy view.
+   * @return String text display of the Board, enemy view.
    */
   public String displayEnemyBoard() {
-    return displayAnyBoard((c)->toDisplay.whatIsAtForEnemy(c));
+    return displayAnyBoard((c) -> toDisplay.whatIsAtForEnemy(c));
+  }
+
+  /**
+   * Display two player's board side by side.
+   *
+   * @param BoardTextView another player's board view
+   * @param String        myHeader
+   * @param String        enemyHeader.
+   * @return String text view of two board.
+   */
+  public String displayMyBoardWithEnemyNextToIt(BoardTextView enemyView, String myHeader, String enemyHeader) {
+    String own = this.displayMyOwnBoard();
+    String enemy = enemyView.displayEnemyBoard();
+    String[] ownLines = own.split("\n");
+    String[] enemyLines = enemy.split("\n");
+    StringBuilder ss = new StringBuilder();
+    int w = toDisplay.getWidth();
+    int h = toDisplay.getHeight();
+    String space = "                                ";
+    ss.append(space, 0, 5);
+    ss.append(myHeader);
+    ss.append(space, 0, 2 * w + 7);
+    ss.append(enemyHeader);
+    ss.append("\n");
+    for (int i = 0; i < h + 2; i++) {
+      ss.append(ownLines[i]);
+      if (i == 0 || i == h + 1) {
+        ss.append(space, 0, 18);
+      } else {
+        ss.append(space, 0, 16);
+      }
+      ss.append(enemyLines[i]);
+      ss.append("\n");
+    }
+    return ss.toString();
   }
 }
-
-
-
-
