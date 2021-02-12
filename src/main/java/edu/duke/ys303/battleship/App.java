@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 public class App {
   TextPlayer player1;
   TextPlayer player2;
@@ -15,8 +14,8 @@ public class App {
   /**
    * Constructor for App
    *
-   *@param TextPlayer to initialize player1
-   *@param TextPlayer to initialize player2
+   * @param TextPlayer to initialize player1
+   * @param TextPlayer to initialize player2
    */
   public App(TextPlayer p1, TextPlayer p2) {
     player1 = p1;
@@ -27,7 +26,7 @@ public class App {
   /**
    * Do placement for player1 and player2.
    *
-   *@throws IOException when placement is not valid.
+   * @throws IOException when placement is not valid.
    */
   public void doPlacementPhase() throws IOException {
     player1.doPlacementPhase();
@@ -35,17 +34,41 @@ public class App {
   }
 
   /**
+   * This method carries out the attacking phase of the game. Players alternate
+   * turns starting with player 1. On a turn a player chooses and carries out an
+   * action. The phase ends when one player has lost at which point this method
+   * declares the winner by printing a message.
+   *
+   * @throws IOException if get invalid input.
+   */
+  public void doAttackingPhase() throws IOException {
+    TextPlayer currentPlayer = player1;
+    TextPlayer nextPlayer = player2;
+
+    while (!currentPlayer.isLose()) {
+      currentPlayer.playOneTurn(nextPlayer.theBoard, nextPlayer.view, "Your ocean", "Player "+nextPlayer.name + "'s ocean");
+      TextPlayer temp = currentPlayer;
+      currentPlayer = nextPlayer;
+      nextPlayer = temp;
+    }
+    // currentPlayer lost, other player won
+    nextPlayer.declareWinner(); // lets abstract this out into a method.
+  }
+
+  /**
    * Main of App
    *
-   * Make a board, put one placement for player1 and player2, and print out the board.
+   * Make a board, put one placement for player1 and player2, and print out the
+   * board.
    */
   public static void main(String[] args) throws IOException {
-    Board<Character> b1 = new BattleShipBoard<Character>(10, 20,'X');
-    Board<Character> b2 = new BattleShipBoard<Character>(10, 20,'X');
+    Board<Character> b1 = new BattleShipBoard<Character>(10, 20, 'X');
+    Board<Character> b2 = new BattleShipBoard<Character>(10, 20, 'X');
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     V1ShipFactory factory = new V1ShipFactory();
     App app = new App(new TextPlayer("A", b1, input, System.out, factory),
         new TextPlayer("B", b2, input, System.out, factory));
     app.doPlacementPhase();
+    app.doAttackingPhase();
   }
 }

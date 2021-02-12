@@ -18,10 +18,11 @@ public class PlacementTest {
   }
 
   @Test
-  public void test_toString() {
+  public void test_toString_and_exception() {
     Coordinate c1 = new Coordinate(1, 2);
     Placement p1 = new Placement(c1, 'V');
     assertEquals("((1,2),V)", p1.toString());
+    assertThrows(IllegalArgumentException.class, () -> new Placement("A0V1"));
   }
 
   @Test

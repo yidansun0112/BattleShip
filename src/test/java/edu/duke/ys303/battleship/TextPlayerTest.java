@@ -46,6 +46,7 @@ public class TextPlayerTest {
     TextPlayer player = createTextPlayer(10, 20, "", bytes);
     String prompt = "Please enter a location for a ship:";
     assertThrows(EOFException.class, () -> player.readPlacement(prompt));
+    assertThrows(EOFException.class, () -> player.readCoordinate(prompt));
   }
 
   @Test

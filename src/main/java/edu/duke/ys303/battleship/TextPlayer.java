@@ -80,6 +80,23 @@ public class TextPlayer {
   }
 
   /**
+   * Give out a prompt, and receive a placement from input.
+   *
+   * @param String prompt to ask for input.
+   * @return a Coordinate
+   * @throws EOFException             when input is null.
+   * @throws IllegalArgumentException when string for Coordinate is not valid
+   */
+  public Coordinate readCoordinate(String prompt) throws IllegalArgumentException, IOException {
+    out.println(prompt);
+    String s = inputReader.readLine();
+    if (s == null) {
+      throw new EOFException();
+    }
+    return new Coordinate(s);
+  }
+
+  /**
    * Take a string name, take a proper method and then put the ship on board.
    *
    * @param String              name of the ship.
@@ -129,9 +146,37 @@ public class TextPlayer {
   /**
    * Check whether this player is lose by checking if all ships are sunk
    *
-   *@return true if lose, false otherwise
+   * @return true if lose, false otherwise
    */
   public boolean isLose() {
     return theBoard.allSunk();
+  }
+
+  /**
+   * Play one attack on enemy's board.
+   *
+   * @param Board         enemy's board.
+   * @param BoardTextView enemy's view
+   * @param myHeaderc
+   * @param enemyHeader
+   */
+  public void playOneTurn(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
+      throws IOException {
+    String text = view.displayMyBoardWithEnemyNextToIt(enemyView, myHeader, enemyHeader);
+    out.print(text);
+    Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
+    Ship<Character> s = enemyBoard.fireAt(c);
+    if (s == null) {
+      out.println("You missed!");
+    } else {
+      out.println("You hit a " + s.getName() + "!");
+    }
+  }
+
+  /**
+   * Declare this player win
+   */
+  public void declareWinner() {
+    out.println("Player " + name + " win the game!");
   }
 }
