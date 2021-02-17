@@ -155,8 +155,8 @@ public class TextPlayer {
   /**
    * Play one attack on enemy's board.
    *
-   * @param Board         enemy's board.
    * @param BoardTextView enemy's view
+   * @param Board         enemy's board.
    * @param myHeaderc
    * @param enemyHeader
    */
@@ -164,12 +164,21 @@ public class TextPlayer {
       throws IOException {
     String text = view.displayMyBoardWithEnemyNextToIt(enemyView, myHeader, enemyHeader);
     out.print(text);
-    Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
-    Ship<Character> s = enemyBoard.fireAt(c);
-    if (s == null) {
-      out.println("You missed!");
-    } else {
-      out.println("You hit a " + s.getName() + "!");
+    try {
+      Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
+      if (c.getRow() > enemyBoard.getHeight() || c.getColumn() > enemyBoard.getWidth()) {
+        throw new IllegalArgumentException();
+      }
+      Ship<Character> s = enemyBoard.fireAt(c);
+      if (s == null) {
+        out.println("You missed!");
+      } else {
+        out.println("You hit a " + s.getName() + "!");
+      }
+    } catch (IllegalArgumentException e) {
+      out.println("Exception thrown:" + e);
+      out.println("Please do that aganin.");
+      playOneTurn(enemyBoard, enemyView, myHeader, enemyHeader);
     }
   }
 

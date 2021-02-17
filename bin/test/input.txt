@@ -24,6 +24,7 @@ G0H
 H0H
 I0H
 J0H
+Z0
 A0
 A7
 A1
