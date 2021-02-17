@@ -32,6 +32,7 @@ public class SimpleShipDisplayInfo<T> implements ShipDisplayInfo<T> {
    *
    * @param Coordinate to get info from
    * @param boolean    indicate whether hit or not
+   * @return T info of this ship.
    */
   @Override
   public T getInfo(Coordinate where, boolean hit) {

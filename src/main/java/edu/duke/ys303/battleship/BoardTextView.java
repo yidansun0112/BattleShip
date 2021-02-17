@@ -17,7 +17,7 @@ public class BoardTextView {
   /**
    * Constructs a BoardView, given the board it will display.
    * 
-   * @param toDisplay is the Board to display
+   * @param Board<Character> to display
    * @throws IllegalArgumentException if the board is larger than 10x26.
    */
   public BoardTextView(Board<Character> toDisplay) {
@@ -98,7 +98,7 @@ public class BoardTextView {
    * @param BoardTextView another player's board view
    * @param String        myHeader
    * @param String        enemyHeader.
-   * @return String text view of two board.
+   * @return String view of two board.
    */
   public String displayMyBoardWithEnemyNextToIt(BoardTextView enemyView, String myHeader, String enemyHeader) {
     String own = this.displayMyOwnBoard();

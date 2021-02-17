@@ -1,7 +1,15 @@
 package edu.duke.ys303.battleship;
 
+/**
+ * This class constructs placement of a ship.
+ */
 public class Placement {
+  /** Coordinate indicates where to put the ship. */
   private final Coordinate where;
+  /**
+   * char indicates how to put this ship. 'V' means vertical. 'H' means
+   * horizontal.
+   */
   private final char orientation;
 
   /**
@@ -39,8 +47,8 @@ public class Placement {
    * @param String s
    */
   public Placement(String s) {
-    if(s.length()!=3){
-      throw new IllegalArgumentException("Placement should be of length 3, but now is "+s.length());
+    if (s.length() != 3) {
+      throw new IllegalArgumentException("Placement should be of length 3, but now is " + s.length());
     }
     Coordinate c = new Coordinate(s.substring(0, 2));
     where = c;
@@ -62,7 +70,7 @@ public class Placement {
    *
    * Take use of hashCode of String from the result of toString()
    *
-   * @return hashCode for Placement class.
+   * @return int hashCode for Placement class.
    */
   @Override
   public int hashCode() {
@@ -72,8 +80,8 @@ public class Placement {
   /**
    * Override equals method for Placement class.
    *
-   * @param object to compare with.
-   * @return true if two objects are equal, false else
+   * @param Object to compare with.
+   * @return boolean true if two objects are equal, false else
    */
   @Override
   public boolean equals(Object o) {

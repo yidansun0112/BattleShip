@@ -10,7 +10,8 @@ public class InBoundsRuleChecker<T> extends PlacementRuleChecker<T> {
    *
    * @param Ship<T>  the ship to decide.
    * @param Board<T> the board to decide.
-   * @return null if the rule is obeyed, a string specifies exact problem otherwise.
+   * @return String null if the rule is obeyed, a string specifies exact problem
+   *         otherwise.
    */
   @Override
   protected String checkMyRule(Ship<T> theShip, Board<T> theBoard) {
@@ -18,16 +19,16 @@ public class InBoundsRuleChecker<T> extends PlacementRuleChecker<T> {
     int height = theBoard.getHeight();
     Iterable<Coordinate> s = theShip.getCoordinates();
     for (Coordinate c : s) {
-      if (c.getRow() < 0 ) {
+      if (c.getRow() < 0) {
         return "That placement is invalid: the ship goes off the top of the board.";
       }
-      if(c.getRow() >= height){
+      if (c.getRow() >= height) {
         return "That placement is invalid: the ship goes off the bottom of the board.";
       }
-      if (c.getColumn() < 0 ) {
+      if (c.getColumn() < 0) {
         return "That placement is invalid: the ship goes off the left of the board.";
       }
-      if(c.getColumn() >= width){
+      if (c.getColumn() >= width) {
         return "That placement is invalid: the ship goes off the right of the board.";
       }
     }
@@ -35,7 +36,8 @@ public class InBoundsRuleChecker<T> extends PlacementRuleChecker<T> {
   }
 
   /**
-   * Constructor for InBoundsRuleChecker.
+   * Constructor for InBoundsRuleChecker. Pass paramter to parent class via
+   * super().
    *
    * @param PlacementRuleChecker<T> passed to parent class constructor.
    */

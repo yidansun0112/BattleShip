@@ -1,5 +1,10 @@
 package edu.duke.ys303.battleship;
 
+/**
+ * This class handles a ship factory for version 1 of this game.
+ *
+ * @param T Character
+ */
 public class V1ShipFactory implements AbstractShipFactory<Character> {
 
   /**
@@ -9,7 +14,7 @@ public class V1ShipFactory implements AbstractShipFactory<Character> {
    * @param int       width of the ship.
    * @param int       height of the ship.
    * @param char      indicates how this ship is showed on board.
-   * @param String    of this ship's name.
+   * @param String    this ship's name.
    * @return a ship.
    */
   protected Ship<Character> createShip(Placement where, int w, int h, char letter, String name) {
@@ -28,7 +33,7 @@ public class V1ShipFactory implements AbstractShipFactory<Character> {
   /**
    * Make a submarine.
    * 
-   * @param where specifies the location and orientation of the ship to make
+   * @param Placement specifies the location and orientation of the ship to make
    * @return the Ship created for the submarine.
    */
   @Override
@@ -39,7 +44,7 @@ public class V1ShipFactory implements AbstractShipFactory<Character> {
   /**
    * Make a destroyer.
    * 
-   * @param where specifies the location and orientation of the ship to make
+   * @param Placement specifies the location and orientation of the ship to make
    * @return Ship created for the destroyer.
    */
 
@@ -51,7 +56,7 @@ public class V1ShipFactory implements AbstractShipFactory<Character> {
   /**
    * Make a battleship.
    * 
-   * @param where specifies the location and orientation of the ship to make
+   * @param Placement specifies the location and orientation of the ship to make
    * @return the Ship created for the battleship.
    */
   @Override
@@ -62,7 +67,7 @@ public class V1ShipFactory implements AbstractShipFactory<Character> {
   /**
    * Make a carrier.
    * 
-   * @param where specifies the location and orientation of the ship to make
+   * @param Placement specifies the location and orientation of the ship to make
    * @return the Ship created for the carrier.
    */
   @Override

@@ -1,7 +1,7 @@
 package edu.duke.ys303.battleship;
 
 /**
- * abstrct class to help check rules.Use tail recursions here to check one by
+ * Abstrct class to help check rules.Use tail recursions here to check one by
  * one.
  */
 public abstract class PlacementRuleChecker<T> {
@@ -36,8 +36,8 @@ public abstract class PlacementRuleChecker<T> {
    * @return true if rule is obeyed, false otherwise.
    */
   public String checkPlacement(Ship<T> theShip, Board<T> theBoard) {
-    String placementProblem=checkMyRule(theShip,theBoard);
-    if (placementProblem!=null) {
+    String placementProblem = checkMyRule(theShip, theBoard);
+    if (placementProblem != null) {
       return placementProblem;
     }
     // other wise, ask the rest of the chain.

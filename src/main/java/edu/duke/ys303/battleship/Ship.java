@@ -1,5 +1,10 @@
 package edu.duke.ys303.battleship;
 
+/**
+ * This class handles a basic Ship interface.
+ *
+ * @param T Character
+ */
 public interface Ship<T> {
 
   /**
@@ -12,7 +17,7 @@ public interface Ship<T> {
   /**
    * Check if this ship occupies the given coordinate.
    * 
-   * @param where is the Coordinate to check if this Ship occupies
+   * @param Coordinate where is the Coordinate to check if this Ship occupies
    * @return true if where is inside this ship, false if not.
    */
   public boolean occupiesCoordinates(Coordinate where);
@@ -29,7 +34,7 @@ public interface Ship<T> {
    * Make this ship record that it has been hit at the given coordinate. The
    * specified coordinate must be part of the ship.
    * 
-   * @param where specifies the coordinates that were hit.
+   * @param Coordinate where specifies the coordinates that were hit.
    * @throws IllegalArgumentException if where is not part of the Ship
    */
   public void recordHitAt(Coordinate where);
@@ -38,7 +43,7 @@ public interface Ship<T> {
    * Check if this ship was hit at the specified coordinates. The coordinates must
    * be part of this Ship.
    * 
-   * @param where is the coordinates to check.
+   * @param Coordinate where is the coordinates to check.
    * @return true if this ship as hit at the indicated coordinates, and false
    *         otherwise.
    * @throws IllegalArgumentException if the coordinates are not part of this
@@ -50,16 +55,17 @@ public interface Ship<T> {
    * Return the view-specific information at the given coordinate. This coordinate
    * must be part of the ship.
    * 
-   * @param where is the coordinate to return information for
+   * @param Coordinate where is the coordinate to return information for
+   * @param boolean    indicates whether for self view or enemy view.
    * @throws IllegalArgumentException if where is not part of the Ship
    * @return The view-specific information at that coordinate.
    */
-  public T getDisplayInfoAt(Coordinate where,boolean myShip);
+  public T getDisplayInfoAt(Coordinate where, boolean myShip);
 
   /**
    * Get the name of this Ship, such as "submarine".
    * 
-   * @return the name of this ship
+   * @return String the name of this ship
    */
   public String getName();
 

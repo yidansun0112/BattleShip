@@ -1,7 +1,12 @@
 package edu.duke.ys303.battleship;
 
+/**
+ * This class constructs coordinate on the board.
+ */
 public class Coordinate {
+  /** row of this Coordinate. */
   private final int row;
+  /** column of this Coordinate. */
   private final int column;
 
   /**
@@ -25,8 +30,8 @@ public class Coordinate {
   /**
    * Constructor(int, int) for Coordinate class.
    *
-   * @param r value of row
-   * @param c value of column
+   * @param int value of row
+   * @param int value of column
    */
   public Coordinate(int r, int c) {
     row = r;
@@ -36,9 +41,9 @@ public class Coordinate {
   /**
    * Coordinate(Sting) for coordinate class.
    *
-   * @param descr String to construct the Coordinate class. String should be of
-   *              length two, the first character should be a letter, and the
-   *              second should be a number.
+   * @param String to construct the Coordinate class. String should be of length
+   *               two, the first character should be a letter, and the second
+   *               should be a number.
    * @throws IllegalArgumentException if the String is in wrong format.
    */
   public Coordinate(String descr) {
@@ -62,8 +67,8 @@ public class Coordinate {
   /**
    * Override equals for Coordinate class.
    *
-   * @param o object to compare
-   * @return true if equal, false else.
+   * @param Object to compare
+   * @return boolean true if equal, false else.
    */
   @Override
   public boolean equals(Object o) {
@@ -89,7 +94,7 @@ public class Coordinate {
    *
    * Take use of hashcode of String class.
    *
-   * @return hashCode for Coordinate class.
+   * @return int hashCode for Coordinate class.
    */
   @Override
   public int hashCode() {

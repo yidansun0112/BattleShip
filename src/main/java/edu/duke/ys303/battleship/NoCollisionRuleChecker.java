@@ -1,7 +1,5 @@
 package edu.duke.ys303.battleship;
 
-
-
 /**
  * This class extends from PlacementRuleChecker and handles no collision check.
  */
@@ -12,7 +10,7 @@ public class NoCollisionRuleChecker<T> extends PlacementRuleChecker<T> {
    *
    * @param Ship<T>  the ship to decide.
    * @param Board<T> the board to decide.
-   * @return null when rule is obeyed, a string specifies exact problem otherwise.
+   * @return String null when rule is obeyed, a string specifies exact problem otherwise.
    */
   @Override
   protected String checkMyRule(Ship<T> theShip, Board<T> theBoard) {
@@ -28,7 +26,7 @@ public class NoCollisionRuleChecker<T> extends PlacementRuleChecker<T> {
   /**
    * Constructor for NoCollisionRuleChecker.
    *
-   * @param PlacementRuleChecker<T> passed to parent class constructor.
+   * @param PlacementRuleChecker<T> passed to parent class constructor. Pass parameter to parent class.
    */
   public NoCollisionRuleChecker(PlacementRuleChecker<T> next) {
     super(next);

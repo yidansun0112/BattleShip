@@ -9,14 +9,26 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.function.Function;
 
+/**
+ * This class constructs TextPlayer that could place ships on the board and do
+ * attack.
+ */
 public class TextPlayer {
+  /** the board to play with */
   final Board<Character> theBoard;
+  /** the view to display */
   final BoardTextView view;
+  /** buffer to read input from */
   final BufferedReader inputReader;
+  /** stream to print out the information */
   final PrintStream out;
+  /** ship factory to add ship on */
   final AbstractShipFactory<Character> shipFactory;
+  /** name of this player */
   final String name;
+  /** an arraylist of ships name to place */
   final ArrayList<String> shipsToPlaces;
+  /** HashMap to handle ship creation functions */
   final HashMap<String, Function<Placement, Ship<Character>>> shipCreationFns;
 
   /**
@@ -157,7 +169,7 @@ public class TextPlayer {
    *
    * @param BoardTextView enemy's view
    * @param Board         enemy's board.
-   * @param myHeaderc
+   * @param myHeader
    * @param enemyHeader
    */
   public void playOneTurn(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
