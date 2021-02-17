@@ -1,6 +1,9 @@
 package edu.duke.ys303.battleship;
+
 /**
  * This interface represents an Abstract Factory pattern for Ship creation.
+ *
+ * @param T Character
  */
 public interface AbstractShipFactory<T> {
   /**

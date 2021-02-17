@@ -7,8 +7,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * This class handles the main function of the whole battleship app.
+ */
 public class App {
+  /** TextPlayer A */
   TextPlayer player1;
+  /** TextPlayer B */
   TextPlayer player2;
 
   /**
@@ -20,13 +25,14 @@ public class App {
   public App(TextPlayer p1, TextPlayer p2) {
     player1 = p1;
     player2 = p2;
-
   }
 
   /**
-   * Do placement for player1 and player2.
+   * This method carries out the placement phase of the game. Player 1 puts 10
+   * ships at first. Then player 2 puts.
    *
-   * @throws IOException when placement is not valid.
+   * @throws EOFxception              when the input is empty.
+   * @throws IllegalArgumentException when the placement is invalid.
    */
   public void doPlacementPhase() throws IOException {
     player1.doPlacementPhase();
@@ -39,14 +45,16 @@ public class App {
    * action. The phase ends when one player has lost at which point this method
    * declares the winner by printing a message.
    *
-   * @throws IOException if get invalid input.
+   * @throws EOFxception              if get empty input.
+   * @throws IllegalArgumentException if get invalid input.
    */
   public void doAttackingPhase() throws IOException {
     TextPlayer currentPlayer = player1;
     TextPlayer nextPlayer = player2;
 
     while (!currentPlayer.isLose()) {
-      currentPlayer.playOneTurn(nextPlayer.theBoard, nextPlayer.view, "Your ocean", "Player "+nextPlayer.name + "'s ocean");
+      currentPlayer.playOneTurn(nextPlayer.theBoard, nextPlayer.view, "Your ocean",
+          "Player " + nextPlayer.name + "'s ocean");
       TextPlayer temp = currentPlayer;
       currentPlayer = nextPlayer;
       nextPlayer = temp;
@@ -58,8 +66,8 @@ public class App {
   /**
    * Main of App
    *
-   * Make a board, put one placement for player1 and player2, and print out the
-   * board.
+   * Make a board, Ask two players to put their ships. Then each player alternate
+   * to attack. Player 1 starts first.
    */
   public static void main(String[] args) throws IOException {
     Board<Character> b1 = new BattleShipBoard<Character>(10, 20, 'X');

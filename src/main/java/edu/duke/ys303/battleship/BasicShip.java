@@ -5,26 +5,25 @@ import java.util.HashMap;
 /**
  * This class implements from interface Ship. It handles information of a basic
  * ship
+ *
+ * @param T Character
  */
 public abstract class BasicShip<T> implements Ship<T> {
 
   /**
    * A HashMap to map Coordinates to Boolean to indicate status of a Ship.
    *
-   * null: This Coordinate is not in the ship. false: This Coordinate is in the
-   * Ship, and not hit. true: This Coordinate is in the Ship and is hit.
+   * null: This Coordinate is not in the ship. false: This Coordinate is in
+   * theShip, and not hit. true: This Coordinate is in the Ship and is hit.
    */
   protected HashMap<Coordinate, Boolean> myPieces;
 
-  /**
-   * DisplayInfo class indicates how to display this ship.
-   */
+  /** DisplayInfo class indicates how to display this ship for my own view. */
   protected ShipDisplayInfo<T> myDisplayInfo;
 
+  /** DisplayInfo class indicates how to display this ship for enemy view. */
   protected ShipDisplayInfo<T> enemyDisplayInfo;
 
-  
-  
   /**
    * Get all of the Coordinates that this Ship occupies.
    * 
@@ -39,9 +38,10 @@ public abstract class BasicShip<T> implements Ship<T> {
    * Constructor of BasicShip.
    *
    * @param Set                of Coordinates for the Ship.
-   * @param ShipDisplayInfo<T> indicates how to display this Ship.
+   * @param ShipDisplayInfo<T> indicates how to display this Ship for own view.
+   * @param ShipDisplayInfo<T> indicates how to display this Ship for enemy view.
    */
-  public BasicShip(Iterable<Coordinate> where, ShipDisplayInfo<T> myDisplayInfo,ShipDisplayInfo<T> enemyDisplayInfo) {
+  public BasicShip(Iterable<Coordinate> where, ShipDisplayInfo<T> myDisplayInfo, ShipDisplayInfo<T> enemyDisplayInfo) {
     myPieces = new HashMap<Coordinate, Boolean>();
     for (Coordinate c : where) {
       myPieces.put(c, false);
@@ -66,7 +66,7 @@ public abstract class BasicShip<T> implements Ship<T> {
    * Override method of occupies. Indicate whether this ship occupies a
    * Coordinate.
    *
-   * @param A Coordinate to check.
+   * @param Coordinate to check.
    * @return true if the ship contains this Coordinate, false otherwise.
    */
   @Override
@@ -75,8 +75,8 @@ public abstract class BasicShip<T> implements Ship<T> {
   }
 
   /**
-   * Check if this ship has been hit in all of its locations meaning it has been
-   * sunk.
+   * Check if this ship has been hit in all of its locations, which means that it
+   * has been sunk.
    * 
    * @return true if this ship has been sunk, false otherwise.
    */
@@ -94,7 +94,7 @@ public abstract class BasicShip<T> implements Ship<T> {
    * Make this ship record that it has been hit at the given coordinate. The
    * specified coordinate must be part of the ship.
    * 
-   * @param where specifies the coordinates that were hit.
+   * @param Coordinate specifies the coordinates that were hit.
    * @throws IllegalArgumentException if where is not part of the Ship
    */
   @Override
@@ -104,11 +104,11 @@ public abstract class BasicShip<T> implements Ship<T> {
   }
 
   /**
-   * Check if this ship was hit at the specified coordinates. The coordinates must
+   * Check if this ship was hit at the specified coordinates. The coordinate must
    * be part of this Ship.
    * 
    * @param where is the coordinates to check.
-   * @return true if this ship as hit at the indicated coordinates, and false
+   * @return true if this ship was hit at the indicated coordinates, and false
    *         otherwise.
    * @throws IllegalArgumentException if the coordinates are not part of this
    *                                  ship.
@@ -121,23 +121,23 @@ public abstract class BasicShip<T> implements Ship<T> {
 
   /**
    * Return the view-specific information at the given coordinate. This coordinate
-   * must be part of the ship.
+   * must be part of the ship. If this ship was for own view, display own view.
+   * Otherwise, display enemy view.
    * 
-   * @param where is the coordinate to return information for
+   * @param Coordinate to return information for
+   * @param boolean    indicates whether this myShip has benn hit or not.
    * @throws IllegalArgumentException if where is not part of the Ship
-   * @return The view-specific information at that coordinate.
+   * @return T The view-specific information at that coordinate.
    */
   @Override
-  public T getDisplayInfoAt(Coordinate where,boolean myShip) {
+  public T getDisplayInfoAt(Coordinate where, boolean myShip) {
     // look up the hit status of this coordinate
     checkCoordinateInThisShip(where);
-    if(myShip){
-    return myDisplayInfo.getInfo(where, wasHitAt(where));
-    }
-    else{
-      return enemyDisplayInfo.getInfo(where,wasHitAt(where));
+    if (myShip) {
+      return myDisplayInfo.getInfo(where, wasHitAt(where));
+    } else {
+      return enemyDisplayInfo.getInfo(where, wasHitAt(where));
     }
   }
 
-  
 }
