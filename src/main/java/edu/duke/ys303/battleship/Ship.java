@@ -26,6 +26,8 @@ public interface Ship<T> {
 
   public void setMove();
 
+  public Iterable<Integer> getIndex();
+
   /**
    * Check if this ship occupies the given coordinate.
    * 

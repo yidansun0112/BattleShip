@@ -43,6 +43,11 @@ public abstract class BasicShip<T> implements Ship<T> {
     return myPieces.keySet();
   }
 
+  @Override
+  public Iterable<Integer> getIndex() {
+    return coordIndex.keySet();
+  }
+
   /**
    * Get a coordinate at a specfied index.
    *
@@ -65,7 +70,7 @@ public abstract class BasicShip<T> implements Ship<T> {
    */
   public BasicShip(HashMap<Integer, Coordinate> coords, ShipDisplayInfo<T> myDisplayInfo,
       ShipDisplayInfo<T> enemyDisplayInfo) {
-   myPieces = new HashMap<Coordinate, Boolean>();
+    myPieces = new HashMap<Coordinate, Boolean>();
     for (Integer i : coords.keySet()) {
       myPieces.put(coords.get(i), false);
     }
@@ -76,10 +81,10 @@ public abstract class BasicShip<T> implements Ship<T> {
   }
 
   @Override
-  public void setMove(){
-    this.isMoved=true;
+  public void setMove() {
+    this.isMoved = true;
   }
-  
+
   /**
    * A helpeer function to abstract out check if Coordinate c is part of a Ship.
    *
@@ -105,10 +110,14 @@ public abstract class BasicShip<T> implements Ship<T> {
   }
 
   @Override
-  public void transferHit(Ship<Character> s){
-
+  public void transferHit(Ship<Character> s) {
+    for (Integer i : s.getIndex()) {
+      if (s.wasHitAt(s.findCoordinate(i))) {
+        recordHitAt(findCoordinate(i));
+      }
+    }
   }
-  
+
   /**
    * Check if this ship has been hit in all of its locations, which means that it
    * has been sunk.
