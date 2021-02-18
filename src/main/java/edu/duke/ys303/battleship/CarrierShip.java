@@ -3,11 +3,11 @@ package edu.duke.ys303.battleship;
 import java.util.HashSet;
 
 /**
- * This class handles construction of a BattleShip in version 2.
+ * This class handles construction of a CarrierShip in version 2.
  *
  * @param T character
  */
-public class BattleShip<T> extends BasicShip<T> {
+public class CarrierShip<T> extends BasicShip<T> {
   /** Name of this Ship. */
   private final String name;
 
@@ -21,7 +21,7 @@ public class BattleShip<T> extends BasicShip<T> {
   }
 
   /**
-   * Convenience constructor for BattleShip.
+   * Convenience constructor for CarrierShip.
    *
    * @param String    name of this ship.
    * @param Placement for how to place this ship.
@@ -29,19 +29,19 @@ public class BattleShip<T> extends BasicShip<T> {
    * @param T         onHit indicates for how to display this ship when it was
    *                  hit.
    */
-  public BattleShip(String name, Placement p, T data, T onHit) {
+  public CarrierShip(String name, Placement p, T data, T onHit) {
     this(name, p, new SimpleShipDisplayInfo<T>(data, onHit), new SimpleShipDisplayInfo<T>(null, data));
   }
 
   /**
-   * Constructor for BattleShip. Pass parameters to parent class via super() call.
+   * Constructor for CarrierShip. Pass parameters to parent class via super() call.
    *
    * @param String             name of this Ship.
    * @param Placement          for how to place this ship.
    * @param ShipDisplayInfo<T> for how to display this ship for self view.
    * @param ShipDisplayInfo<T> for how to display this ship for enemy view.
    */
-  public BattleShip(String name, Placement p, ShipDisplayInfo<T> s1, ShipDisplayInfo<T> s2) {
+  public CarrierShip(String name, Placement p, ShipDisplayInfo<T> s1, ShipDisplayInfo<T> s2) {
     super(getCoords(p), s1, s2);
     this.name = name;
   }
@@ -76,12 +76,17 @@ public class BattleShip<T> extends BasicShip<T> {
    */
   static HashSet<Coordinate> makeCoordsUp(Coordinate upperLeft) {
     HashSet<Coordinate> coords = new HashSet<Coordinate>();
-    coords.add(upperLeft);
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    for (int i = c - 1; i <= c + 1; i++) {
-      Coordinate cdt = new Coordinate(r + 1, i);
-      coords.add(cdt);
+    for (int i = r; i <= r + 4; i++) {
+      if (i <= r + 2) {
+        Coordinate cdt = new Coordinate(i, c);
+        coords.add(cdt);
+      }
+      if (i >= r + 2) {
+        Coordinate cdt = new Coordinate(i, c + 1);
+        coords.add(cdt);
+      }
     }
     return coords;
   }
@@ -97,10 +102,15 @@ public class BattleShip<T> extends BasicShip<T> {
     HashSet<Coordinate> coords = new HashSet<Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    coords.add(new Coordinate(r + 1, c + 1));
-    for (int i = r; i <= r + 2; i++) {
-      Coordinate cdt = new Coordinate(i, c);
-      coords.add(cdt);
+    for (int i = c-2; i <= c + 2; i++) {
+      if (i <= c) {
+        Coordinate cdt = new Coordinate(r+1, i);
+        coords.add(cdt);
+      }
+      if (i >= c) {
+        Coordinate cdt = new Coordinate(r, i);
+        coords.add(cdt);
+      }
     }
     return coords;
   }
@@ -116,10 +126,15 @@ public class BattleShip<T> extends BasicShip<T> {
     HashSet<Coordinate> coords = new HashSet<Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    coords.add(new Coordinate(r + 1, c + 1));
-    for (int i = c; i <= c + 2; i++) {
-      Coordinate cdt = new Coordinate(r, i);
-      coords.add(cdt);
+    for (int i = r; i <= r + 4; i++) {
+      if (i <= r + 2) {
+        Coordinate cdt = new Coordinate(i, c);
+        coords.add(cdt);
+      }
+      if (i >= r + 2) {
+        Coordinate cdt = new Coordinate(i, c - 1);
+        coords.add(cdt);
+      }
     }
     return coords;
   }
@@ -135,10 +150,15 @@ public class BattleShip<T> extends BasicShip<T> {
     HashSet<Coordinate> coords = new HashSet<Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    coords.add(new Coordinate(r + 1, c - 1));
-    for (int i = r; i <= r + 2; i++) {
-      Coordinate cdt = new Coordinate(i, c);
-      coords.add(cdt);
+    for (int i = c; i <= c + 4; i++) {
+      if (i <= c + 2) {
+        Coordinate cdt = new Coordinate(r, i);
+        coords.add(cdt);
+      }
+      if (i >= c + 2) {
+        Coordinate cdt = new Coordinate(r+1, i);
+        coords.add(cdt);
+      }
     }
     return coords;
   }
