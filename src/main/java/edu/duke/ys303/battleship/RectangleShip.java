@@ -1,6 +1,6 @@
 package edu.duke.ys303.battleship;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 /**
  * This class extends from BasicShip and handles information of a rectangle
@@ -74,14 +74,16 @@ public class RectangleShip<T> extends BasicShip<T> {
    * @param int        height indicates height of this Ship.
    * @return HashSet<Coordinate> Set of all Coordinates of this Ship.
    */
-  static HashSet<Coordinate> makeCoords(Coordinate upperleft, int width, int height) {
-    HashSet<Coordinate> coords = new HashSet<Coordinate>();
+  static HashMap<Integer, Coordinate> makeCoords(Coordinate upperleft, int width, int height) {
+    HashMap<Integer, Coordinate> coords = new HashMap<Integer, Coordinate>();
     int r = upperleft.getRow();
     int c = upperleft.getColumn();
+    int count = 0;
     for (int i = r; i < r + width; i++) {
       for (int j = c; j < c + height; j++) {
         Coordinate cdt = new Coordinate(i, j);
-        coords.add(cdt);
+        coords.put(count, cdt);
+        count++;
       }
     }
     return coords;

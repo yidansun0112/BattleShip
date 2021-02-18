@@ -143,6 +143,23 @@ public class BattleShipBoard<T> implements Board<T> {
 
   /**
    * Search for any ship that occupies Coordinate c. If one is found, that Ship is
+   * returned. Else,return null.
+   *
+   * @param Coordinate to attack on.
+   * @return Ship<T> if one ship is found, null otherwise.
+   */
+  @Override
+  public Ship<T> findShip(Coordinate c) {
+    for (Ship<T> s : myShips) {
+      if (s.occupiesCoordinates(c)) {        
+        return s;
+      }
+    }    
+    return null;
+  }
+  
+  /**
+   * Search for any ship that occupies Coordinate c. If one is found, that Ship is
    * "hit" by the attack and record. Else, add Coordinate c into enemyMisses Set.
    *
    * @param Coordinate to attack on.
@@ -150,12 +167,11 @@ public class BattleShipBoard<T> implements Board<T> {
    */
   @Override
   public Ship<T> fireAt(Coordinate c) {
-    for (Ship<T> s : myShips) {
-      if (s.occupiesCoordinates(c)) {
-        s.recordHitAt(c);
-        return s;
-      }
-    }
+    Ship<T> s=findShip(c);
+    if(s!=null){
+      s.recordHitAt(c);
+      return s;
+    }    
     enemyMisses.add(c);
     return null;
   }

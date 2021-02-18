@@ -46,6 +46,15 @@ public interface Board<T> {
 
   /**
    * Search for any ship that occupies Coordinate c. If one is found, that Ship is
+   * returned. Else,return null.
+   *
+   * @param Coordinate to attack on.
+   * @return Ship<T> if one ship is found, null otherwise.
+   */
+  public Ship<T> findShip(Coordinate c);
+
+  /**
+   * Search for any ship that occupies Coordinate c. If one is found, that Ship is
    * "hit" by the attack and record.
    *
    * @param Coordinate to attack on.
