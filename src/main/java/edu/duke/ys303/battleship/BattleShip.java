@@ -118,7 +118,7 @@ public class BattleShip<T> extends BasicShip<T> {
     int c = upperLeft.getColumn();
     coords.put(0, new Coordinate(r + 1, c + 1));
     for (int i = 1; i <= 3; i++) {
-      Coordinate cdt = new Coordinate(r, c - 2 + i);
+      Coordinate cdt = new Coordinate(r, c - 1 + i);
       coords.put(4 - i, cdt);
     }
     return coords;
@@ -131,7 +131,7 @@ public class BattleShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashSet<Coordinate> Set of all Coordinates of this ship.
    */
-  static HashMap<Integer,Coordinate> makeCoordsLeft(Coordinate upperLeft) {
+  static HashMap<Integer, Coordinate> makeCoordsLeft(Coordinate upperLeft) {
     HashMap<Integer, Coordinate> coords = new HashMap<Integer, Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();

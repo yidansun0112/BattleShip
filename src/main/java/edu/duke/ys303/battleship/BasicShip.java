@@ -44,6 +44,17 @@ public abstract class BasicShip<T> implements Ship<T> {
   }
 
   /**
+   * Get a coordinate at a specfied index.
+   *
+   * @param int for index
+   * @return Coordinate
+   */
+  @Override
+  public Coordinate findCoordinate(int i) {
+    return coordIndex.get(i);
+  }
+
+  /**
    * Constructor of BasicShip.
    *
    * @param HashMap<Integer,Coordinate> index of Coordinates for the Ship.
@@ -52,15 +63,16 @@ public abstract class BasicShip<T> implements Ship<T> {
    * @param ShipDisplayInfo<T>          indicates how to display this Ship for
    *                                    enemy view.
    */
-  public BasicShip(HashMap<Integer, Coordinate> coordIndex, ShipDisplayInfo<T> myDisplayInfo,
+  public BasicShip(HashMap<Integer, Coordinate> coords, ShipDisplayInfo<T> myDisplayInfo,
       ShipDisplayInfo<T> enemyDisplayInfo) {
-    myPieces = new HashMap<Coordinate, Boolean>();
-    for (Integer i : coordIndex.keySet()) {
-      myPieces.put(coordIndex.get(i), false);
+   myPieces = new HashMap<Coordinate, Boolean>();
+    for (Integer i : coords.keySet()) {
+      myPieces.put(coords.get(i), false);
     }
     this.myDisplayInfo = myDisplayInfo;
     this.enemyDisplayInfo = enemyDisplayInfo;
     this.isMoved = false;
+    this.coordIndex = coords;
   }
 
   /**

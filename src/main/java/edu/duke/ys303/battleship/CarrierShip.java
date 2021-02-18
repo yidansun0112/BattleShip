@@ -1,6 +1,6 @@
 package edu.duke.ys303.battleship;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 /**
  * This class handles construction of a CarrierShip in version 2.
@@ -88,6 +88,7 @@ public class CarrierShip<T> extends BasicShip<T> {
       if (i >= r + 2) {
         Coordinate cdt = new Coordinate(i, c + 1);
         coords.put(count,cdt);
+        count++;
       }
     }
     return coords;
@@ -163,10 +164,12 @@ public class CarrierShip<T> extends BasicShip<T> {
       if (i <= c + 2) {
         Coordinate cdt = new Coordinate(r, i);
         coords.put(count,cdt);
+        count--;
       }
       if (i >= c + 2) {
         Coordinate cdt = new Coordinate(r+1, i);
         coords.put(count,cdt);
+        count--;
       }
     }
     return coords;

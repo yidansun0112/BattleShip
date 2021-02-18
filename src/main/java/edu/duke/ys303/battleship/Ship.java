@@ -15,6 +15,14 @@ public interface Ship<T> {
   public Iterable<Coordinate> getCoordinates();
 
   /**
+   *Get a coordinate at a specfied index.
+   *
+   *@param int for index
+   *@return Coordinate
+   */
+  public Coordinate findCoordinate(int i);
+
+  /**
    * Check if this ship occupies the given coordinate.
    * 
    * @param Coordinate where is the Coordinate to check if this Ship occupies

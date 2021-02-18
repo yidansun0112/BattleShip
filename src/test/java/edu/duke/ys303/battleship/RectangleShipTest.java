@@ -2,17 +2,18 @@ package edu.duke.ys303.battleship;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class RectangleShipTest {
   @Test
   public void test_make_coords() {
     Coordinate uplft = new Coordinate(1, 1);
-    HashSet<Coordinate> coords = RectangleShip.makeCoords(uplft, 1, 3);
-    HashSet<Coordinate> expected = new HashSet<Coordinate>();
-    expected.add(new Coordinate(1, 1));
-    expected.add(new Coordinate(1, 2));
-    expected.add(new Coordinate(1, 3));
+    HashMap<Integer,Coordinate> coords = RectangleShip.makeCoords(uplft, 1, 3);
+    HashMap<Integer,Coordinate> expected = new HashMap<Integer,Coordinate>();
+    expected.put(0,new Coordinate(1, 1));
+    expected.put(1,new Coordinate(1, 2));
+    expected.put(2,new Coordinate(1, 3));
     assertEquals(expected, coords);
   }
 
