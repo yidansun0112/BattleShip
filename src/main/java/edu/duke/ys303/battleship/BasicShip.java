@@ -24,9 +24,6 @@ public abstract class BasicShip<T> implements Ship<T> {
   /** DisplayInfo class indicates how to display this ship for enemy view. */
   protected ShipDisplayInfo<T> enemyDisplayInfo;
 
-  /** Indicates whether this ship has been moved or not */
-  protected boolean isMoved;
-
   /**
    * A HashMap to map order to coordinates to mark index of each piece in this
    * ship.
@@ -59,6 +56,11 @@ public abstract class BasicShip<T> implements Ship<T> {
     return coordIndex.get(i);
   }
 
+  @Override
+  public T getData() {
+    return myDisplayInfo.getInfo(false);
+  }
+
   /**
    * Constructor of BasicShip.
    *
@@ -76,13 +78,7 @@ public abstract class BasicShip<T> implements Ship<T> {
     }
     this.myDisplayInfo = myDisplayInfo;
     this.enemyDisplayInfo = enemyDisplayInfo;
-    this.isMoved = false;
     this.coordIndex = coords;
-  }
-
-  @Override
-  public void setMove() {
-    this.isMoved = true;
   }
 
   /**
@@ -174,13 +170,13 @@ public abstract class BasicShip<T> implements Ship<T> {
    * @return T The view-specific information at that coordinate.
    */
   @Override
-  public T getDisplayInfoAt(Coordinate where, boolean myShip) {
+  public T getDisplayInfoAt(Coordinate where, boolean myShip, boolean enemyHit) {
     // look up the hit status of this coordinate
     checkCoordinateInThisShip(where);
     if (myShip) {
-      return myDisplayInfo.getInfo(where, wasHitAt(where));
+      return myDisplayInfo.getInfo(wasHitAt(where));
     } else {
-      return enemyDisplayInfo.getInfo(where, wasHitAt(where));
+      return enemyDisplayInfo.getInfo(enemyHit);
     }
   }
 

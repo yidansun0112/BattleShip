@@ -1,0 +1,26 @@
+package edu.duke.ys303.battleship;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+public class V2ShipFactoryTest {
+  private void checkShip(Ship<Character> testShip, String expectedName, char expectedLetter,
+      Coordinate... expectedLocs) {
+    assertEquals(expectedName, testShip.getName());
+    for (Coordinate c : expectedLocs) {
+      assertEquals(true, testShip.occupiesCoordinates(c));
+    }
+    assertEquals(expectedLetter, testShip.getDisplayInfoAt(expectedLocs[0],true));
+  }
+
+  @Test
+  public void test_make_battleship() {
+    V2ShipFactory f = new V2ShipFactory();
+    Placement p1 = new Placement(new Coordinate(1, 2), 'U');
+    Ship<Character> dst = f.makeBattleship(p1);
+    checkShip(dst, "Battleship", 'b', new Coordinate(1, 2), new Coordinate(2, 1),new Coordinate(2, 2), new Coordinate(2, 3));
+    assertEquals(false, dst.occupiesCoordinates(new Coordinate(1, 4)));
+  }
+
+}

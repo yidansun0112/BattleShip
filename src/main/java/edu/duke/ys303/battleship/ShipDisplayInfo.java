@@ -14,5 +14,6 @@ public interface ShipDisplayInfo<T> {
    * @param boolean indicates hit or not.
    * @return type T info
    */
-  public T getInfo(Coordinate where, boolean hit);
+  public T getInfo(boolean hit);
+
 }

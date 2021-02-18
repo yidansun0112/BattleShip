@@ -209,7 +209,7 @@ public class TextPlayer {
     newShip.transferHit(oldShip);
     String str = theBoard.tryAddShip(newShip);
     if (str == null) {
-      oldShip.setMove();
+      theBoard.removeShip(oldShip);
       moveTimes--;
     } else {
       out.println(str);
@@ -225,7 +225,7 @@ public class TextPlayer {
     out.println("F Fire at a square");
     out.println("M Move a ship to another square (" + moveTimes + " remaining)");
     out.println("S Sonar scan (" + scanTimes + " remaining)\n");
-    out.println("Player A, what would you like to do?");
+    out.println("Player "+name+", what would you like to do?");
     try {
       readChoice(enemyBoard, enemyView, myHeader, enemyHeader);
     } catch (IllegalArgumentException e) {
@@ -238,18 +238,22 @@ public class TextPlayer {
   public void readChoice(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {
     String s = inputReader.readLine();
-    if (s == "F") {
+    char c=s.charAt(0);
+    if (c == 'F'||c=='f') {
       playOneFire(enemyBoard);
-    } else if (s == "M") {
+    } else if (c == 'M'||c=='m') {
       if (moveTimes == 0) {
         throw new IllegalArgumentException("You don't have any move leaving!");
       }
       playOneMove();
-    } else if (s == "S") {
+    } else if (c == 'S'||c=='s') {
       if (scanTimes == 0) {
         throw new IllegalArgumentException("You don't have any sonar scan leaving!");
       }
       playOneScan();
+    }
+    else{
+      throw new IllegalArgumentException("Wrong Choice, You should choose between F, M and S");
     }
   }
 

@@ -22,6 +22,8 @@ public interface Board<T> {
    */
   public int getHeight();
 
+  public void removeShip(Ship<T> s);
+  
   /**
    * General whatISAt given Coordinate position methof of Board. Self View.
    *

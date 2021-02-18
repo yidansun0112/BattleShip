@@ -2,6 +2,7 @@ package edu.duke.ys303.battleship;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.HashMap;
 
 /**
  * This class handles a battleship board, which implements from basic Board<T>
@@ -19,6 +20,8 @@ public class BattleShipBoard<T> implements Board<T> {
   private final PlacementRuleChecker<T> placementChecker;
   /** HashSet of misses for this Board. */
   HashSet<Coordinate> enemyMisses;
+  /** HashSet of hits for this Board. */
+  HashMap<Coordinate,T> enemyHits;
   /** missInfo to display for this board. */
   final T missInfo;
 
@@ -65,6 +68,7 @@ public class BattleShipBoard<T> implements Board<T> {
     myShips = new ArrayList<Ship<T>>();
     this.placementChecker = placementChecker;
     enemyMisses = new HashSet<Coordinate>();
+    enemyHits = new HashMap<Coordinate,T>();
     this.missInfo = missInfo;
   }
 
@@ -80,6 +84,11 @@ public class BattleShipBoard<T> implements Board<T> {
    */
   public BattleShipBoard(int w, int h, T missInfo) {
     this(w, h, new InBoundsRuleChecker<T>(new NoCollisionRuleChecker<T>(null)), missInfo);
+  }
+
+  @Override
+  public void removeShip(Ship<T> s){
+    myShips.remove(s);
   }
 
   /**
@@ -132,11 +141,14 @@ public class BattleShipBoard<T> implements Board<T> {
   protected T whatIsAt(Coordinate where, boolean isSelf) {
     for (Ship<T> s : myShips) {
       if (s.occupiesCoordinates(where)) {
-        return s.getDisplayInfoAt(where, isSelf);
+        return s.getDisplayInfoAt(where, isSelf, enemyHits.containsKey(where));
       }
     }
     if (!isSelf && enemyMisses.contains(where)) {
       return missInfo;
+    }
+     if (!isSelf && enemyHits.containsKey(where)) {
+       return enemyHits.get(where);
     }
     return null;
   }
@@ -170,6 +182,7 @@ public class BattleShipBoard<T> implements Board<T> {
     Ship<T> s=findShip(c);
     if(s!=null){
       s.recordHitAt(c);
+      enemyHits.put(c,s.getData());
       return s;
     }    
     enemyMisses.add(c);

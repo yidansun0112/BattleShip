@@ -1,0 +1,26 @@
+package edu.duke.ys303.battleship;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import java.util.HashSet;
+
+public class BattleShipTest {
+  @Test
+  public void test_make_up() {
+    BattleShip<Character> s=new BattleShip<Character>("Battleship",new Placement("B1U"),'b','*');
+    HashSet<Coordinate> expected=new HashSet<Coordinate>();
+    expected.add(new Coordinate(1,1));
+    expected.add(new Coordinate(2,0));
+    expected.add(new Coordinate(2,1));
+    expected.add(new Coordinate(2,2));
+  }
+
+}
+
+
+
+
+
+
+

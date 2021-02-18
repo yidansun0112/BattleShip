@@ -81,6 +81,8 @@ public class BattleShipBoardTest {
     Ship<Character> s2 = new RectangleShip<Character>(c2, 's', '*');
     b.tryAddShip(s2);
     b.fireAt(c1);
+    assertEquals('s',b.whatIsAtForEnemy(c1));
+    assertEquals(null,b.whatIsAtForEnemy(c2));
     assertEquals(false,b.allSunk());
      b.fireAt(c2);
     assertEquals(true,b.allSunk());

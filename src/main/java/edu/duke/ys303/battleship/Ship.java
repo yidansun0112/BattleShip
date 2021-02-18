@@ -24,9 +24,9 @@ public interface Ship<T> {
 
   public void transferHit(Ship<Character> s);
 
-  public void setMove();
-
   public Iterable<Integer> getIndex();
+
+  public T getData();
 
   /**
    * Check if this ship occupies the given coordinate.
@@ -74,7 +74,7 @@ public interface Ship<T> {
    * @throws IllegalArgumentException if where is not part of the Ship
    * @return The view-specific information at that coordinate.
    */
-  public T getDisplayInfoAt(Coordinate where, boolean myShip);
+  public T getDisplayInfoAt(Coordinate where, boolean myShip,boolean enemyHit);
 
   /**
    * Get the name of this Ship, such as "submarine".

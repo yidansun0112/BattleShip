@@ -67,11 +67,11 @@ public class RectangleShipTest {
     Coordinate c2 = new Coordinate(1, 2);
     Coordinate c3 = new Coordinate(3, 3);
     ship.recordHitAt(c1);
-    assertThrows(IllegalArgumentException.class, () -> ship.getDisplayInfoAt(c3,true));
-    assertEquals('*', ship.getDisplayInfoAt(c1,true));
-    assertEquals('s', ship.getDisplayInfoAt(c2,true));
-    assertEquals('s', ship.getDisplayInfoAt(c1,false));
-    assertEquals(null, ship.getDisplayInfoAt(c2,false));
+    assertThrows(IllegalArgumentException.class, () -> ship.getDisplayInfoAt(c3,true,false));
+    assertEquals('*', ship.getDisplayInfoAt(c1,true,true));
+    assertEquals('s', ship.getDisplayInfoAt(c2,true,false));
+    assertEquals('s', ship.getDisplayInfoAt(c1,false,true));
+    assertEquals(null, ship.getDisplayInfoAt(c2,false,false));
   }
 
   @Test
