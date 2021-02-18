@@ -19,7 +19,7 @@ public class TextPlayerTest {
     BufferedReader input = new BufferedReader(new StringReader(inputData));
     PrintStream output = new PrintStream(bytes, true);
     Board<Character> board = new BattleShipBoard<Character>(w, h, 'X');
-    V1ShipFactory shipFactory = new V1ShipFactory();
+    V2ShipFactory shipFactory = new V2ShipFactory();
     return new TextPlayer("A", board, input, output, shipFactory);
   }
 

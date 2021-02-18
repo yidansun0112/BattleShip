@@ -41,7 +41,7 @@ public class TextPlayer {
    * @param V1ShipFactory  to initialize shipFactory
    */
   public TextPlayer(String name, Board<Character> theBoard, BufferedReader inputReader, PrintStream out,
-      V1ShipFactory factory) {
+      V2ShipFactory factory) {
     this.name = name;
     this.theBoard = theBoard;
     this.view = new BoardTextView(theBoard);
@@ -198,6 +198,6 @@ public class TextPlayer {
    * Declare this player win
    */
   public void declareWinner() {
-    out.println("Player " + name + " win the game!");
+    out.print("Player " + name + " win the game!\n");
   }
 }
