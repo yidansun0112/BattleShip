@@ -78,14 +78,16 @@ public class CarrierShip<T> extends BasicShip<T> {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
+    int count=0;
     for (int i = r; i <= r + 4; i++) {
       if (i <= r + 2) {
         Coordinate cdt = new Coordinate(i, c);
-        coords.add(cdt);
+        coords.put(count,cdt);
+        count++;
       }
       if (i >= r + 2) {
         Coordinate cdt = new Coordinate(i, c + 1);
-        coords.add(cdt);
+        coords.put(count,cdt);
       }
     }
     return coords;
@@ -102,14 +104,17 @@ public class CarrierShip<T> extends BasicShip<T> {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
+    int count=0;
     for (int i = c-2; i <= c + 2; i++) {
       if (i <= c) {
         Coordinate cdt = new Coordinate(r+1, i);
-        coords.add(cdt);
+        coords.put(count,cdt);
+        count++;
       }
       if (i >= c) {
         Coordinate cdt = new Coordinate(r, i);
-        coords.add(cdt);
+        coords.put(count,cdt);
+        count++;
       }
     }
     return coords;
@@ -126,14 +131,17 @@ public class CarrierShip<T> extends BasicShip<T> {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
+    int count=5;
     for (int i = r; i <= r + 4; i++) {
       if (i <= r + 2) {
         Coordinate cdt = new Coordinate(i, c);
-        coords.add(cdt);
+        coords.put(count,cdt);
+        count--;
       }
       if (i >= r + 2) {
         Coordinate cdt = new Coordinate(i, c - 1);
-        coords.add(cdt);
+        coords.put(count,cdt);
+        count--;
       }
     }
     return coords;
@@ -150,14 +158,15 @@ public class CarrierShip<T> extends BasicShip<T> {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
+    int count=5;
     for (int i = c; i <= c + 4; i++) {
       if (i <= c + 2) {
         Coordinate cdt = new Coordinate(r, i);
-        coords.add(cdt);
+        coords.put(count,cdt);
       }
       if (i >= c + 2) {
         Coordinate cdt = new Coordinate(r+1, i);
-        coords.add(cdt);
+        coords.put(count,cdt);
       }
     }
     return coords;
