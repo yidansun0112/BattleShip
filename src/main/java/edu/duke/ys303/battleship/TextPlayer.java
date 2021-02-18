@@ -30,6 +30,10 @@ public class TextPlayer {
   final ArrayList<String> shipsToPlaces;
   /** HashMap to handle ship creation functions */
   final HashMap<String, Function<Placement, Ship<Character>>> shipCreationFns;
+  /** Times left for move. */
+  private int moveTimes;
+  /** Times left for scan. */
+  private int scanTimes;
 
   /**
    * Constructor for TextPlayer
@@ -52,6 +56,8 @@ public class TextPlayer {
     shipCreationFns = new HashMap<String, Function<Placement, Ship<Character>>>();
     setupShipCreationMap();
     setupShipCreationList();
+    moveTimes = 3;
+    scanTimes = 3;
   }
 
   /**
@@ -105,7 +111,11 @@ public class TextPlayer {
     if (s == null) {
       throw new EOFException();
     }
-    return new Coordinate(s);
+    Coordinate c = new Coordinate(s);
+    if (c.getRow() > theBoard.getHeight() || c.getColumn() > theBoard.getWidth()) {
+      throw new IllegalArgumentException("Coordinate goes off the board!");
+    }
+    return c;
   }
 
   /**
@@ -172,26 +182,79 @@ public class TextPlayer {
    * @param myHeader
    * @param enemyHeader
    */
+  public void playOneFire(Board<Character> enemyBoard) throws IOException {
+    Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
+    Ship<Character> s = enemyBoard.fireAt(c);
+    if (s == null) {
+      out.println("You missed!");
+    } else {
+      out.println("You hit a " + s.getName() + "!");
+    }
+  }
+
+  public void playOneMove() throws IOException {
+    Coordinate c = readCoordinate(
+        "Player " + name + " Please choose any place which is a part of the ship you want to move.");
+    Ship<Character> s = theBoard.findShip(c);
+    if (s == null) {
+      throw new IllegalArgumentException("This coordinate is not part of any ship on the board.");
+    }
+    moveShip(s);
+  }
+
+  public void moveShip(Ship<Character> oldShip) throws IOException {
+    Placement p = readPlacement("Player " + name + " where do you want this " + oldShip.getName() + " move to?");
+    Function<Placement, Ship<Character>> createFn = shipCreationFns.get(oldShip.getName());
+    Ship<Character> newShip = createFn.apply(p);
+    newShip.transferHit(oldShip);
+    String str = theBoard.tryAddShip(newShip);
+    if (str == null) {
+      oldShip.setMove();
+      moveTimes--;
+    } else {
+      out.println(str);
+      throw new IllegalArgumentException("This placement is invalid");
+    }
+  }
+
   public void playOneTurn(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {
     String text = view.displayMyBoardWithEnemyNextToIt(enemyView, myHeader, enemyHeader);
     out.print(text);
+    out.println("Possible actions for Player A:\n");
+    out.println("F Fire at a square");
+    out.println("M Move a ship to another square (" + moveTimes + " remaining)");
+    out.println("S Sonar scan (" + scanTimes + " remaining)\n");
+    out.println("Player A, what would you like to do?");
     try {
-      Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
-      if (c.getRow() > enemyBoard.getHeight() || c.getColumn() > enemyBoard.getWidth()) {
-        throw new IllegalArgumentException();
-      }
-      Ship<Character> s = enemyBoard.fireAt(c);
-      if (s == null) {
-        out.println("You missed!");
-      } else {
-        out.println("You hit a " + s.getName() + "!");
-      }
+      readChoice(enemyBoard, enemyView, myHeader, enemyHeader);
     } catch (IllegalArgumentException e) {
-      out.println("Exception thrown:" + e);
-      out.println("Please do that aganin.");
+      out.println("Exception thrown" + e);
+      out.println("Please make your choice again.");
       playOneTurn(enemyBoard, enemyView, myHeader, enemyHeader);
     }
+  }
+
+  public void readChoice(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
+      throws IOException {
+    String s = inputReader.readLine();
+    if (s == "F") {
+      playOneFire(enemyBoard);
+    } else if (s == "M") {
+      if (moveTimes == 0) {
+        throw new IllegalArgumentException("You don't have any move leaving!");
+      }
+      playOneMove();
+    } else if (s == "S") {
+      if (scanTimes == 0) {
+        throw new IllegalArgumentException("You don't have any sonar scan leaving!");
+      }
+      playOneScan();
+    }
+  }
+
+  public void playOneScan() {
+
   }
 
   /**

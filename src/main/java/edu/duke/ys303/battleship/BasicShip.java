@@ -75,6 +75,11 @@ public abstract class BasicShip<T> implements Ship<T> {
     this.coordIndex = coords;
   }
 
+  @Override
+  public void setMove(){
+    this.isMoved=true;
+  }
+  
   /**
    * A helpeer function to abstract out check if Coordinate c is part of a Ship.
    *
@@ -99,6 +104,11 @@ public abstract class BasicShip<T> implements Ship<T> {
     return myPieces.containsKey(where);
   }
 
+  @Override
+  public void transferHit(Ship<Character> s){
+
+  }
+  
   /**
    * Check if this ship has been hit in all of its locations, which means that it
    * has been sunk.
