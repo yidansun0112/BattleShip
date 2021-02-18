@@ -53,7 +53,7 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Placement indicates how to place this ship.
    * @return HashSet<Coordinate> Set of all Coordinates of this ship.
    */
-  static HashSet<Coordinate> getCoords(Placement p) {
+  static HashMap<Integer,Coordinate> getCoords(Placement p) {
     Character o = p.getOrientation();
     Coordinate c = p.getWhere();
     if (o == 'U') {
@@ -74,8 +74,8 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashSet<Coordinate> Set of all Coordinates of this ship.
    */
-  static HashSet<Coordinate> makeCoordsUp(Coordinate upperLeft) {
-    HashSet<Coordinate> coords = new HashSet<Coordinate>();
+  static HashMap<Integer,Coordinate> makeCoordsUp(Coordinate upperLeft) {
+    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
     for (int i = r; i <= r + 4; i++) {
@@ -98,8 +98,8 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashSet<Coordinate> Set of all Coordinates of this ship.
    */
-  static HashSet<Coordinate> makeCoordsRight(Coordinate upperLeft) {
-    HashSet<Coordinate> coords = new HashSet<Coordinate>();
+  static HashMap<Integer,Coordinate>  makeCoordsRight(Coordinate upperLeft) {
+    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
     for (int i = c-2; i <= c + 2; i++) {
@@ -122,8 +122,8 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashSet<Coordinate> Set of all Coordinates of this ship.
    */
-  static HashSet<Coordinate> makeCoordsDown(Coordinate upperLeft) {
-    HashSet<Coordinate> coords = new HashSet<Coordinate>();
+  static HashMap<Integer,Coordinate>  makeCoordsDown(Coordinate upperLeft) {
+    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
     for (int i = r; i <= r + 4; i++) {
@@ -146,8 +146,8 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashSet<Coordinate> Set of all Coordinates of this ship.
    */
-  static HashSet<Coordinate> makeCoordsLeft(Coordinate upperLeft) {
-    HashSet<Coordinate> coords = new HashSet<Coordinate>();
+  static HashMap<Integer,Coordinate>  makeCoordsLeft(Coordinate upperLeft) {
+    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
     for (int i = c; i <= c + 4; i++) {
