@@ -1,0 +1,12 @@
+package edu.duke.ys303.battleship;
+
+public class HumanPlayer extends TextPlayer {
+  public Placement readPlacement(String prompt) throws IOException {
+    out.println(prompt);
+    String s = inputReader.readLine();
+    if (s == null) {
+      throw new EOFException();
+    }
+    return new Placement(s);
+  }
+}

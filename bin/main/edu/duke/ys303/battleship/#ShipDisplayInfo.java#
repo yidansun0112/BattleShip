@@ -1,0 +1,12 @@
+package edu.duke.ys303.battleship;
+
+/**
+ *Interface of basic ship display
+ */
+
+public interface ShipDisplayInfo<T> {
+
+  /**
+   *General getI
+  public T getInfo(Coordinate where, boolean hit);
+}

@@ -6,6 +6,7 @@ package edu.duke.ys303.battleship;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 
 /**
  * This class handles the main function of the whole battleship app.
@@ -25,11 +26,6 @@ public class App {
   public App(TextPlayer p1, TextPlayer p2) {
     player1 = p1;
     player2 = p2;
-  }
-
-  public void doDecidePhase() throws IOException {
-    player1.decideHumanComputer();
-    player2.decideHumanComputer();
   }
 
   /**
@@ -56,7 +52,6 @@ public class App {
   public void doAttackingPhase() throws IOException {
     TextPlayer currentPlayer = player1;
     TextPlayer nextPlayer = player2;
-
     while (!currentPlayer.isLose()) {
       currentPlayer.playOneTurn(nextPlayer.theBoard, nextPlayer.view, "Your ocean",
           "Player " + nextPlayer.name + "'s ocean");
@@ -66,6 +61,31 @@ public class App {
     }
     // currentPlayer lost, other player won
     nextPlayer.declareWinner(); // lets abstract this out into a method.
+  }
+
+  public static TextPlayer decideHumanComputer(String name, Board<Character> theBoard, BufferedReader inputReader,
+      PrintStream out, V2ShipFactory factory) throws IOException {
+    out.println("Do you want Player " + name + " a human player or to be played by the computer?");
+    out.println("H for human, C for computer");
+    out.println("Please make your choice:");
+    try {
+      String s = inputReader.readLine();
+      if (s.length() != 1) {
+        throw new IllegalArgumentException("Choice should only be one letter");
+      }
+      char c = s.charAt(0);
+      if (c == 'H' || c == 'h') {
+        return new HumanTextPlayer(name, theBoard, inputReader, System.out, factory);
+      } else if (c == 'C' || c == 'c') {
+        return new ComputerTextPlayer(name, theBoard, inputReader, System.out, factory);
+      } else {
+        throw new IllegalArgumentException("Choice should be H or C!");
+      }
+    } catch (IllegalArgumentException e) {
+      out.println("Exception thrown:" + e);
+      out.println("Please do that again!");
+      return decideHumanComputer(name, theBoard, inputReader, out, factory);
+    }
   }
 
   /**
@@ -79,9 +99,9 @@ public class App {
     Board<Character> b2 = new BattleShipBoard<Character>(10, 20, 'X');
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     V2ShipFactory factory = new V2ShipFactory();
-    App app = new App(new TextPlayer("A", b1, input, System.out, factory),
-        new TextPlayer("B", b2, input, System.out, factory));
-    app.doDecidePhase();
+    TextPlayer p1=decideHumanComputer("A", b1, input, System.out, factory);
+    TextPlayer p2=decideHumanComputer("B", b2, input, System.out, factory);
+    App app = new App(p1,p2);
     app.doPlacementPhase();
     app.doAttackingPhase();
   }

@@ -1,0 +1,21 @@
+package edu.duke.ys303.battleship;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.EOFException;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.StringReader;
+
+public class HumanTextPlayerTest {
+  @Test
+  public void test_() {
+
+  }
+
+}
