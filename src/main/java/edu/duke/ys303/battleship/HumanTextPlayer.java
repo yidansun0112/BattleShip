@@ -166,14 +166,12 @@ public class HumanTextPlayer extends TextPlayer {
 
 
   public void readChoice(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
-      throws IOException {
-    
+      throws IOException {    
       String s = inputReader.readLine();
       if (s.length() != 1) {
         throw new IllegalArgumentException("Choice should only be one letter");
       }
-      char c = s.charAt(0);
-    
+      char c = s.charAt(0);    
     if (c == 'F' || c == 'f') {
       playOneFire(enemyBoard);
     } else if (c == 'M' || c == 'm') {
