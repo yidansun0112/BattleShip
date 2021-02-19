@@ -5,11 +5,15 @@ package edu.duke.ys303.battleship;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.BufferedReader;
+import java.io.OutputStream;
+import java.io.StringReader;
 
 import org.junit.jupiter.api.Test;
 
@@ -45,5 +49,24 @@ class AppTest {
   @Test
   void test_h_h() throws IOException {
     test_main("input.txt", "output.txt");
-  }  
+  }
+  
+  @Test
+  void test_computer()throws IOException{
+    BufferedReader input = new BufferedReader(new StringReader("c\n"));
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    PrintStream output = new PrintStream(bytes, true);
+    Board<Character> board = new BattleShipBoard<Character>(10, 20, 'X');
+    V2ShipFactory shipFactory = new V2ShipFactory();
+    TextPlayer p=App.decideHumanComputer("A",board,input,output,shipFactory);
+    assertTrue(p instanceof ComputerTextPlayer);
+  }
 }
+
+
+
+
+
+
+
+

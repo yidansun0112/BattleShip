@@ -81,4 +81,27 @@ public class HumanTextPlayerTest {
     String prompt = "Player A please choose one center coordinate to sonar scan!\n";
     assertEquals(prompt + expected, bytes.toString());
   }
+
+  @Test
+  void test_update() {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    HumanTextPlayer player = createTextPlayer(10, 20, "s\na0\n", bytes);
+    player.updateScanTimes();
+    player.updateScanTimes();
+    player.updateScanTimes();
+    assertThrows(IllegalArgumentException.class, () -> player.readChoice(player.theBoard,player.view,null,null));
+    assertThrows(IllegalArgumentException.class, () -> player.playOneMove());
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3558,32 +3558,6 @@ S  | | | | | | | | |  S                S  | | | | | | | | |  S
 T  | | | | | | | | |  T                T  | | | | | | | | |  T
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
-Exception thrownjava.lang.IllegalArgumentException: Coordinate String must contain only two characters, but now the length is0
-Please make your choice again.
-     Your ocean                           Player A's ocean
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
-B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
-C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
-D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
-E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
-F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
-G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
-H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
-I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
-J  |b| | | | | | | |  J                J  | | | | | | | | |  J
-K  | | | | | | | | |  K                K  | | |b| | | | | |  K
-L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
-M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
-N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
-O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
-P  | | | |*| | | | |  P                P  | | |c|c| | | | |  P
-Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
-R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
-S  | | | | | | | | |  S                S  | | | | | | | | |  S
-T  | | | | | | | | |  T                T  | | | | | | | | |  T
-  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
-Player B Please choose one place to fire at.
 You hit a Carrier!
      Your ocean                           Player B's ocean
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
