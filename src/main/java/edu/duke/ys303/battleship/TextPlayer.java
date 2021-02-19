@@ -90,18 +90,30 @@ public abstract class TextPlayer {
     return theBoard.allSunk();
   }
 
+  /**
+   * Update scanTimes by minus one.
+   */
   public void updateScanTimes(){
     scanTimes--;
   }
 
+  /**
+   * Update moveTimes by minus one.
+   */
   public void updateMoveTimes(){
     moveTimes--;
   }
 
+  /**
+   * Getter for moveTimes
+   */
   public int getMoveTimes(){
     return moveTimes;
   }
 
+  /**
+   * Getter for scanTimes
+   */
   public int getScanTimes() {
     return scanTimes;
   } 
@@ -113,10 +125,15 @@ public abstract class TextPlayer {
     out.println("Player " + name + " win the game!");
   }
 
+  /**
+   * Will be override in ComputerTextPlayer and HumanTextPlayer
+   */
   public void doPlacementPhase() throws IOException{
 
   }
-
+  /**
+   * Will be override in ComputerTextPlayer and HumanTextPlayer
+   */
   public void playOneTurn(Board<Character> theBoard,BoardTextView view, String myHeader, String enemyHeader) throws IOException{
 
   }

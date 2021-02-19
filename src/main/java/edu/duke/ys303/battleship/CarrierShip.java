@@ -48,10 +48,10 @@ public class CarrierShip<T> extends BasicShip<T> {
 
   /**
    * Static method to make it easy to pass parameters to parent class BasicShip.
-   * Make a set of Coordinates of this Ship based on the placement.
+   * Make a map of Coordinates of this Ship based on the placement and location in this ship.
    * 
    * @param Placement indicates how to place this ship.
-   * @return HashSet<Coordinate> Set of all Coordinates of this ship.
+   * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
   static HashMap<Integer,Coordinate> getCoords(Placement p) {
     Character o = p.getOrientation();
@@ -69,10 +69,10 @@ public class CarrierShip<T> extends BasicShip<T> {
 
   /**
    * Static method to make it easy to pass parameters to parent class BasicShip.
-   * Make a set of Coordinates of this Ship when placed up.
+   * Make a map of Coordinates of this Ship when placed up.
    * 
    * @param Coordinate indicates where to place this ship.
-   * @return HashSet<Coordinate> Set of all Coordinates of this ship.
+   * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
   static HashMap<Integer,Coordinate> makeCoordsUp(Coordinate upperLeft) {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
@@ -96,10 +96,10 @@ public class CarrierShip<T> extends BasicShip<T> {
 
   /**
    * Static method to make it easy to pass parameters to parent class BasicShip.
-   * Make a set of Coordinates of this Ship when placed right.
+   * Make a map of Coordinates of this Ship when placed right.
    * 
    * @param Coordinate indicates where to place this ship.
-   * @return HashSet<Coordinate> Set of all Coordinates of this ship.
+   * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
   static HashMap<Integer,Coordinate>  makeCoordsRight(Coordinate upperLeft) {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
@@ -123,10 +123,10 @@ public class CarrierShip<T> extends BasicShip<T> {
 
   /**
    * Static method to make it easy to pass parameters to parent class BasicShip.
-   * Make a set of Coordinates of this Ship when placed down.
+   * Make a map of Coordinates of this Ship when placed down.
    * 
    * @param Coordinate indicates where to place this ship.
-   * @return HashSet<Coordinate> Set of all Coordinates of this ship.
+   * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
   static HashMap<Integer,Coordinate>  makeCoordsDown(Coordinate upperLeft) {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
@@ -150,10 +150,10 @@ public class CarrierShip<T> extends BasicShip<T> {
 
   /**
    * Static method to make it easy to pass parameters to parent class BasicShip.
-   * Make a set of Coordinates of this Ship when placed left.
+   * Make a map of Coordinates of this Ship when placed left.
    * 
    * @param Coordinate indicates where to place this ship.
-   * @return HashSet<Coordinate> Set of all Coordinates of this ship.
+   * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
   static HashMap<Integer,Coordinate>  makeCoordsLeft(Coordinate upperLeft) {
     HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();

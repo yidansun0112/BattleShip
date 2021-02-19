@@ -86,6 +86,11 @@ public class BattleShipBoard<T> implements Board<T> {
     this(w, h, new InBoundsRuleChecker<T>(new NoCollisionRuleChecker<T>(null)), missInfo);
   }
 
+  /**
+   * Remove the given ship from this board.
+   * 
+   * @param Ship<T> to remove
+   */
   @Override
   public void removeShip(Ship<T> s){
     myShips.remove(s);

@@ -63,6 +63,17 @@ public class App {
     nextPlayer.declareWinner(); // lets abstract this out into a method.
   }
 
+  /**
+   * This method carries out whether the TextPlayer is Human or Computer.
+   * 
+   * Prints out choices for user to choose. H for human, C for computer.
+   * @param String of the TextPlayer
+   * @param Board<Character> to play on
+   * @param BufferedReader for input
+   * @param PrintStream for output
+   * @param V2ShipFactory factory to build ships
+   * @return TextPlayer
+   */
   public static TextPlayer decideHumanComputer(String name, Board<Character> theBoard, BufferedReader inputReader,
       PrintStream out, V2ShipFactory factory) throws IOException {
     out.println("Do you want Player " + name + " a human player or to be played by the computer?");
@@ -91,7 +102,8 @@ public class App {
   /**
    * Main of App
    *
-   * Make a board, Ask two players to put their ships. Then each player alternate
+   * Make a board, decide two players as human or computer.
+   * Ask two players to put their ships. Then each player alternate
    * to attack. Player 1 starts first.
    */
   public static void main(String[] args) throws IOException {

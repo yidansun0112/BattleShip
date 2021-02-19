@@ -72,7 +72,7 @@ public class RectangleShip<T> extends BasicShip<T> {
    * @param Coordinate upperleft indicates upperleft of the Ship.
    * @param int        width indicates width of this Ship.
    * @param int        height indicates height of this Ship.
-   * @return HashSet<Coordinate> Set of all Coordinates of this Ship.
+   * @return HashMap<Integer,Coordinate> Map of all Coordinates of this Ship.
    */
   static HashMap<Integer, Coordinate> makeCoords(Coordinate upperleft, int width, int height) {
     HashMap<Integer, Coordinate> coords = new HashMap<Integer, Coordinate>();

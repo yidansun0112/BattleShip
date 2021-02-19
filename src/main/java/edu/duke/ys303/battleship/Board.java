@@ -22,6 +22,11 @@ public interface Board<T> {
    */
   public int getHeight();
 
+  /**
+   * Remove the given ship from this board.
+   * 
+   * @param Ship<T> to remove
+   */
   public void removeShip(Ship<T> s);
   
   /**

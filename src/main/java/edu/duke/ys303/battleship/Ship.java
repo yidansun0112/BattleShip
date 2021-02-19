@@ -22,10 +22,26 @@ public interface Ship<T> {
    */
   public Coordinate findCoordinate(int i);
 
+  /**
+   * Transfer hit records from oldShip to newShip.
+   * 
+   * @param Ship<Character> s
+   */
   public void transferHit(Ship<Character> s);
 
+  
+  /**
+   * Get all index of this Ship.
+   * 
+   * @return Iterable<Integer>
+   */
   public Iterable<Integer> getIndex();
 
+  /**
+   * Get display data of this ship.
+   * 
+   * @return T
+   */
   public T getData();
 
   /**

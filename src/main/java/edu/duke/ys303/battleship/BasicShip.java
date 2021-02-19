@@ -31,37 +31,6 @@ public abstract class BasicShip<T> implements Ship<T> {
   protected HashMap<Integer, Coordinate> coordIndex;
 
   /**
-   * Get all of the Coordinates that this Ship occupies.
-   * 
-   * @return An Iterable with the coordinates that this Ship occupies
-   */
-  @Override
-  public Iterable<Coordinate> getCoordinates() {
-    return myPieces.keySet();
-  }
-
-  @Override
-  public Iterable<Integer> getIndex() {
-    return coordIndex.keySet();
-  }
-
-  /**
-   * Get a coordinate at a specfied index.
-   *
-   * @param int for index
-   * @return Coordinate
-   */
-  @Override
-  public Coordinate findCoordinate(int i) {
-    return coordIndex.get(i);
-  }
-
-  @Override
-  public T getData() {
-    return myDisplayInfo.getInfo(false);
-  }
-
-  /**
    * Constructor of BasicShip.
    *
    * @param HashMap<Integer,Coordinate> index of Coordinates for the Ship.
@@ -79,6 +48,47 @@ public abstract class BasicShip<T> implements Ship<T> {
     this.myDisplayInfo = myDisplayInfo;
     this.enemyDisplayInfo = enemyDisplayInfo;
     this.coordIndex = coords;
+  }
+
+  /**
+   * Get all of the Coordinates that this Ship occupies.
+   * 
+   * @return An Iterable with the coordinates that this Ship occupies
+   */
+  @Override
+  public Iterable<Coordinate> getCoordinates() {
+    return myPieces.keySet();
+  }
+
+  /**
+   * Get all index of this Ship.
+   * 
+   * @return Iterable<Integer>
+   */
+  @Override
+  public Iterable<Integer> getIndex() {
+    return coordIndex.keySet();
+  }
+
+  /**
+   * Get a coordinate at a specfied index.
+   *
+   * @param int for index
+   * @return Coordinate
+   */
+  @Override
+  public Coordinate findCoordinate(int i) {
+    return coordIndex.get(i);
+  }
+
+  /**
+   * Get display data of this ship.
+   * 
+   * @return T
+   */
+  @Override
+  public T getData() {
+    return myDisplayInfo.getInfo(false);
   }
 
   /**
@@ -105,6 +115,11 @@ public abstract class BasicShip<T> implements Ship<T> {
     return myPieces.containsKey(where);
   }
 
+  /**
+   * Transfer hit records from oldShip to newShip.
+   * 
+   * @param Ship<Character> s
+   */
   @Override
   public void transferHit(Ship<Character> s) {
     for (Integer i : s.getIndex()) {

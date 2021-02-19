@@ -9,13 +9,32 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.function.Function;
 
+/**
+ * This class handles move of a computer player.
+ */
 public class HumanTextPlayer extends TextPlayer {
 
+  /**
+   * Constructor for HumanTextPlayer. Pass parameters to parent class.
+   * 
+   * @param String name of this Player
+   * @param Board<Character> theBoard to play on
+   * @param BufferedReader for input
+   * @param PrintStream for out
+   * @param V2ShipFactory to build ships
+   */
   public HumanTextPlayer(String name, Board<Character> theBoard, BufferedReader inputReader, PrintStream out,
       V2ShipFactory factory) {
     super(name, theBoard, inputReader, out, factory);
   }
 
+  /**
+   * Print a prompt, read a string and generate a placement.
+   * 
+   * @param String prompt
+   * @return Placement
+   * @throws EOPException when input is null
+   */
   public Placement readPlacement(String prompt) throws IOException {
     out.println(prompt);
     String s = inputReader.readLine();
@@ -25,6 +44,14 @@ public class HumanTextPlayer extends TextPlayer {
     return new Placement(s);
   }
 
+  /**
+   * Print a prompt, read a string and generate a coordinate.
+   * 
+   * @param String prompt
+   * @return Coordinate
+   * @throws EOPException when input is null
+   * @throws IllegalArgumentException when coordinate is go off the board.
+   */
   public Coordinate readCoordinate(String prompt) throws IOException {
     out.println(prompt);
     String s = inputReader.readLine();
@@ -38,6 +65,12 @@ public class HumanTextPlayer extends TextPlayer {
     return c;
   }
 
+  /**
+   * Do one placement on this Board.
+   * 
+   * @param String name of the ship to put
+   * @param Function<Placement,Ship<Character>> function to create a ship.
+   */
   public void doOnePlacement(String shipName, Function<Placement, Ship<Character>> createFn) throws IOException {
     try {
       Placement p = readPlacement("Player " + name + " where do you want to place a " + shipName + "?");
@@ -57,6 +90,12 @@ public class HumanTextPlayer extends TextPlayer {
     }
   }
 
+  /**
+   * Add ships on the board.
+   * 
+   * Print prompt.
+   * Get shipname from shipsToPlaces, then add this ship on the board.
+   */
   public void doPlacementPhase() throws IOException {
     BoardTextView view = new BoardTextView(theBoard);
     out.println(view.displayMyOwnBoard());
@@ -71,6 +110,13 @@ public class HumanTextPlayer extends TextPlayer {
     }
   }
 
+  /**
+   * Play one fire move at the enemyBoard.
+   * 
+   * @param Board<Character> enemyBoard
+   * If miss, print "You missed!"
+   * If hit, print "You hit a xxship!
+   */
   public void playOneFire(Board<Character> enemyBoard) throws IOException {
     Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
     Ship<Character> s = enemyBoard.fireAt(c);
@@ -81,6 +127,12 @@ public class HumanTextPlayer extends TextPlayer {
     }
   }
 
+  /**
+   * Play one movement.
+   * 
+   * Read a coordinate, then find a ship that occupies this coordinate and move this ship.
+   * @throw IllegalArgumentException when the given coordinate relates to no ship.
+   */
   public void playOneMove() throws IOException {
     Coordinate c = readCoordinate(
         "Player " + name + " Please choose any place which is a part of the ship you want to move.");
@@ -91,6 +143,15 @@ public class HumanTextPlayer extends TextPlayer {
     moveShip(s);
   }
 
+  /**
+   * Move the given ship.
+   * 
+   * Read a placement to move this ship.
+   * Transfer hit records between two ships.
+   * 
+   * @param Ship<Character> to move
+   * @throw IllegalArgumentException when this placement is invalid, ex.goes off the board, collision...
+   */
   public void moveShip(Ship<Character> oldShip) throws IOException {
     Placement p = readPlacement("Player " + name + " where do you want this " + oldShip.getName() + " move to?");
     Function<Placement, Ship<Character>> createFn = shipCreationFns.get(oldShip.getName());
@@ -106,6 +167,11 @@ public class HumanTextPlayer extends TextPlayer {
     }
   }
 
+  /**
+   * Play one scan on enemyBoard.
+   * 
+   * @param Board<Character> enemyBoard to scan
+   */
   public void playOneScan(Board<Character> enemyBoard) throws IOException {
     Coordinate coord = readCoordinate("Player " + name + " please choose one center coordinate to sonar scan!");
     HashMap<Character, Integer> count = shipCount(coord, enemyBoard);
@@ -113,6 +179,13 @@ public class HumanTextPlayer extends TextPlayer {
     updateScanTimes();
   }
 
+  /**
+   * Count ship squares on the area decided by the coordinate
+   * 
+   * @param Coordinate
+   * @param Board<Character> enemyBoard to scan
+   * @return HashMap<Character,Integer>
+   */
   public HashMap<Character, Integer> shipCount(Coordinate coord, Board<Character> enemyBoard) {
     int r = coord.getRow();
     int c = coord.getColumn();
@@ -135,6 +208,12 @@ public class HumanTextPlayer extends TextPlayer {
     return count;
   }
 
+  /**
+   * print the result of scan.
+   * Go through the map, get number of each ship squares
+   * 
+   * @param HashMap<Character,Integer> of ships
+   */
   private void printResult(HashMap<Character, Integer> shipCount) {
     out.println("Submarines occupy " + shipCount.getOrDefault('s', 0) + " squares");
     out.println("Destroyers occupy " + shipCount.getOrDefault('d', 0) + " squares");
@@ -142,6 +221,15 @@ public class HumanTextPlayer extends TextPlayer {
     out.println("Carriers occupy " + shipCount.getOrDefault('c', 0) + " squares");
   }
 
+  /**
+   * Play one turn for human player.
+   * May choose to fire, move or scan.
+   * 
+   * @param Board<Character> to play on
+   * @param BoardTextView of enemyBoard
+   * @param String my header of the board
+   * @param String enemy header of the board
+   */
   public void playOneTurn(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {
     String text = view.displayMyBoardWithEnemyNextToIt(enemyView, myHeader, enemyHeader);
@@ -164,7 +252,15 @@ public class HumanTextPlayer extends TextPlayer {
     }
   }
 
-
+  /**
+   * Read a choice and act based on this choice.
+   * 
+   * @param Board<Character> to play on
+   * @param BoardTextView of enemyBoard
+   * @param String my header of the board
+   * @param String enemy header of the board
+   * @return char
+   */
   public void readChoice(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {    
       String s = inputReader.readLine();
