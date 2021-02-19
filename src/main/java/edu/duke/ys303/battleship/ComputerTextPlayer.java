@@ -15,35 +15,34 @@ public class ComputerTextPlayer extends TextPlayer {
   /**
    * Constructor for ComputerTextPlayer
    * 
-   * @param String name of this Player
+   * @param String           name of this Player
    * @param Board<Character> theBoard to play on
-   * @param BufferedReader for input
-   * @param PrintStream for out
-   * @param V2ShipFactory to build ships
+   * @param BufferedReader   for input
+   * @param PrintStream      for out
+   * @param V2ShipFactory    to build ships
    */
   public ComputerTextPlayer(String name, Board<Character> theBoard, BufferedReader inputReader, PrintStream out,
       V2ShipFactory factory) {
-    this(name,theBoard,inputReader,out,factory,false);
+    this(name, theBoard, inputReader, out, factory, false);
   }
 
   /**
    * Constructor for ComputerTextPlayer. Pass parameters to parent class.
    * 
-   * @param String name of this Player
+   * @param String           name of this Player
    * @param Board<Character> theBoard to play on
-   * @param BufferedReader for input
-   * @param PrintStream for out
-   * @param V2ShipFactory to build ships
-   * @param boolean indicates whether use seed (for test) or not
+   * @param BufferedReader   for input
+   * @param PrintStream      for out
+   * @param V2ShipFactory    to build ships
+   * @param boolean          indicates whether use seed (for test) or not
    */
   public ComputerTextPlayer(String name, Board<Character> theBoard, BufferedReader inputReader, PrintStream out,
-                            V2ShipFactory factory,boolean seed) {
+      V2ShipFactory factory, boolean seed) {
     super(name, theBoard, inputReader, out, factory);
-    if(seed){
-      rdm=new Random(50);
-    }
-    else{
-    rdm = new Random();
+    if (seed) {
+      rdm = new Random(50);
+    } else {
+      rdm = new Random();
     }
   }
 
@@ -55,7 +54,7 @@ public class ComputerTextPlayer extends TextPlayer {
   public Placement readPlacement() {
     int row = rdm.nextInt(theBoard.getHeight());
     int col = rdm.nextInt(theBoard.getWidth());
-    //String to get orientation from
+    // String to get orientation from
     String oriChoice = "VHURDL";
     char ori = oriChoice.charAt(rdm.nextInt(6));
     return new Placement(new Coordinate(row, col), ori);
@@ -76,7 +75,7 @@ public class ComputerTextPlayer extends TextPlayer {
   /**
    * Do one placement on this Board.
    * 
-   * @param String name of the ship to put
+   * @param String                              name of the ship to put
    * @param Function<Placement,Ship<Character>> function to create a ship.
    */
   public void doOnePlacement(String shipName, Function<Placement, Ship<Character>> createFn) {
@@ -106,9 +105,8 @@ public class ComputerTextPlayer extends TextPlayer {
   /**
    * Play one fire move at the enemyBoard.
    * 
-   * @param Board<Character> enemyBoard
-   * If miss, print "Player xx missed!"
-   * If hit, print "Player xx hit your xxship at coordinate!"
+   * @param Board<Character> enemyBoard If miss, print "Player xx missed!" If hit,
+   *                         print "Player xx hit your xxship at coordinate!"
    */
   public void playOneFire(Board<Character> enemyBoard) {
     Coordinate c = readCoordinate();
@@ -123,7 +121,9 @@ public class ComputerTextPlayer extends TextPlayer {
   /**
    * Play one movement.
    * 
-   * Generate a coordinate, then find a ship that occupies this coordinate and move this ship.
+   * Generate a coordinate, then find a ship that occupies this coordinate and
+   * move this ship.
+   * 
    * @throw IllegalArgumentException when the given coordinate relates to no ship.
    */
   public void playOneMove() {
@@ -138,11 +138,12 @@ public class ComputerTextPlayer extends TextPlayer {
   /**
    * Move the given ship.
    * 
-   * Generate a placement to move this ship.
-   * Transfer hit records between two ships.
+   * Generate a placement to move this ship. Transfer hit records between two
+   * ships.
    * 
    * @param Ship<Character> to move
-   * @throw IllegalArgumentException when this placement is invalid, ex.goes off the board, collision...
+   * @throw IllegalArgumentException when this placement is invalid, ex.goes off
+   *        the board, collision...
    */
   public void moveShip(Ship<Character> oldShip) {
     Placement p = readPlacement();
@@ -162,9 +163,9 @@ public class ComputerTextPlayer extends TextPlayer {
    * Play one turn for this player. May choose to fire, move, or sonar scan.
    * 
    * @param Board<Character> to play on
-   * @param BoardTextView of enemyBoard
-   * @param String my header of the board
-   * @param String enemy header of the board
+   * @param BoardTextView    of enemyBoard
+   * @param String           my header of the board
+   * @param String           enemy header of the board
    */
   public void playOneTurn(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader) {
     try {
@@ -193,11 +194,9 @@ public class ComputerTextPlayer extends TextPlayer {
   /**
    * Do choice based on the char.
    * 
-   * 'F' for fire
-   * 'M' for move
-   * 'S' for scan
+   * 'F' for fire 'M' for move 'S' for scan
    * 
-   * @param char for choice
+   * @param char             for choice
    * @param Board<Character> board to play on
    */
   public void doChoice(char c, Board<Character> enemyBoard) {

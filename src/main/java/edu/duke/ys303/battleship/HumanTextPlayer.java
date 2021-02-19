@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.function.Function;
 
@@ -17,11 +15,11 @@ public class HumanTextPlayer extends TextPlayer {
   /**
    * Constructor for HumanTextPlayer. Pass parameters to parent class.
    * 
-   * @param String name of this Player
+   * @param String           name of this Player
    * @param Board<Character> theBoard to play on
-   * @param BufferedReader for input
-   * @param PrintStream for out
-   * @param V2ShipFactory to build ships
+   * @param BufferedReader   for input
+   * @param PrintStream      for out
+   * @param V2ShipFactory    to build ships
    */
   public HumanTextPlayer(String name, Board<Character> theBoard, BufferedReader inputReader, PrintStream out,
       V2ShipFactory factory) {
@@ -49,7 +47,7 @@ public class HumanTextPlayer extends TextPlayer {
    * 
    * @param String prompt
    * @return Coordinate
-   * @throws EOPException when input is null
+   * @throws EOPException             when input is null
    * @throws IllegalArgumentException when coordinate is go off the board.
    */
   public Coordinate readCoordinate(String prompt) throws IOException {
@@ -68,7 +66,7 @@ public class HumanTextPlayer extends TextPlayer {
   /**
    * Do one placement on this Board.
    * 
-   * @param String name of the ship to put
+   * @param String                              name of the ship to put
    * @param Function<Placement,Ship<Character>> function to create a ship.
    */
   public void doOnePlacement(String shipName, Function<Placement, Ship<Character>> createFn) throws IOException {
@@ -93,8 +91,8 @@ public class HumanTextPlayer extends TextPlayer {
   /**
    * Add ships on the board.
    * 
-   * Print prompt.
-   * Get shipname from shipsToPlaces, then add this ship on the board.
+   * Print prompt. Get shipname from shipsToPlaces, then add this ship on the
+   * board.
    */
   public void doPlacementPhase() throws IOException {
     BoardTextView view = new BoardTextView(theBoard);
@@ -113,9 +111,8 @@ public class HumanTextPlayer extends TextPlayer {
   /**
    * Play one fire move at the enemyBoard.
    * 
-   * @param Board<Character> enemyBoard
-   * If miss, print "You missed!"
-   * If hit, print "You hit a xxship!
+   * @param Board<Character> enemyBoard If miss, print "You missed!" If hit, print
+   *                         "You hit a xxship!
    */
   public void playOneFire(Board<Character> enemyBoard) throws IOException {
     Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
@@ -130,7 +127,9 @@ public class HumanTextPlayer extends TextPlayer {
   /**
    * Play one movement.
    * 
-   * Read a coordinate, then find a ship that occupies this coordinate and move this ship.
+   * Read a coordinate, then find a ship that occupies this coordinate and move
+   * this ship.
+   * 
    * @throw IllegalArgumentException when the given coordinate relates to no ship.
    */
   public void playOneMove() throws IOException {
@@ -146,11 +145,11 @@ public class HumanTextPlayer extends TextPlayer {
   /**
    * Move the given ship.
    * 
-   * Read a placement to move this ship.
-   * Transfer hit records between two ships.
+   * Read a placement to move this ship. Transfer hit records between two ships.
    * 
    * @param Ship<Character> to move
-   * @throw IllegalArgumentException when this placement is invalid, ex.goes off the board, collision...
+   * @throw IllegalArgumentException when this placement is invalid, ex.goes off
+   *        the board, collision...
    */
   public void moveShip(Ship<Character> oldShip) throws IOException {
     Placement p = readPlacement("Player " + name + " where do you want this " + oldShip.getName() + " move to?");
@@ -209,8 +208,7 @@ public class HumanTextPlayer extends TextPlayer {
   }
 
   /**
-   * print the result of scan.
-   * Go through the map, get number of each ship squares
+   * print the result of scan. Go through the map, get number of each ship squares
    * 
    * @param HashMap<Character,Integer> of ships
    */
@@ -222,13 +220,12 @@ public class HumanTextPlayer extends TextPlayer {
   }
 
   /**
-   * Play one turn for human player.
-   * May choose to fire, move or scan.
+   * Play one turn for human player. May choose to fire, move or scan.
    * 
    * @param Board<Character> to play on
-   * @param BoardTextView of enemyBoard
-   * @param String my header of the board
-   * @param String enemy header of the board
+   * @param BoardTextView    of enemyBoard
+   * @param String           my header of the board
+   * @param String           enemy header of the board
    */
   public void playOneTurn(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {
@@ -256,18 +253,18 @@ public class HumanTextPlayer extends TextPlayer {
    * Read a choice and act based on this choice.
    * 
    * @param Board<Character> to play on
-   * @param BoardTextView of enemyBoard
-   * @param String my header of the board
-   * @param String enemy header of the board
+   * @param BoardTextView    of enemyBoard
+   * @param String           my header of the board
+   * @param String           enemy header of the board
    * @return char
    */
   public void readChoice(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
-      throws IOException {    
-      String s = inputReader.readLine();
-      if (s.length() != 1) {
-        throw new IllegalArgumentException("Choice should only be one letter");
-      }
-      char c = s.charAt(0);    
+      throws IOException {
+    String s = inputReader.readLine();
+    if (s.length() != 1) {
+      throw new IllegalArgumentException("Choice should only be one letter");
+    }
+    char c = s.charAt(0);
     if (c == 'F' || c == 'f') {
       playOneFire(enemyBoard);
     } else if (c == 'M' || c == 'm') {

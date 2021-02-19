@@ -28,7 +28,7 @@ public interface Board<T> {
    * @param Ship<T> to remove
    */
   public void removeShip(Ship<T> s);
-  
+
   /**
    * General whatISAt given Coordinate position methof of Board. Self View.
    *

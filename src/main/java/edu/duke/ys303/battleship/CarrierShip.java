@@ -34,7 +34,8 @@ public class CarrierShip<T> extends BasicShip<T> {
   }
 
   /**
-   * Constructor for CarrierShip. Pass parameters to parent class via super() call.
+   * Constructor for CarrierShip. Pass parameters to parent class via super()
+   * call.
    *
    * @param String             name of this Ship.
    * @param Placement          for how to place this ship.
@@ -48,12 +49,13 @@ public class CarrierShip<T> extends BasicShip<T> {
 
   /**
    * Static method to make it easy to pass parameters to parent class BasicShip.
-   * Make a map of Coordinates of this Ship based on the placement and location in this ship.
+   * Make a map of Coordinates of this Ship based on the placement and location in
+   * this ship.
    * 
    * @param Placement indicates how to place this ship.
    * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
-  static HashMap<Integer,Coordinate> getCoords(Placement p) {
+  static HashMap<Integer, Coordinate> getCoords(Placement p) {
     Character o = p.getOrientation();
     Coordinate c = p.getWhere();
     if (o == 'U') {
@@ -74,20 +76,20 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
-  static HashMap<Integer,Coordinate> makeCoordsUp(Coordinate upperLeft) {
-    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
+  static HashMap<Integer, Coordinate> makeCoordsUp(Coordinate upperLeft) {
+    HashMap<Integer, Coordinate> coords = new HashMap<Integer, Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    int count=0;
+    int count = 0;
     for (int i = r; i <= r + 4; i++) {
       if (i <= r + 2) {
         Coordinate cdt = new Coordinate(i, c);
-        coords.put(count,cdt);
+        coords.put(count, cdt);
         count++;
       }
       if (i >= r + 2) {
         Coordinate cdt = new Coordinate(i, c + 1);
-        coords.put(count,cdt);
+        coords.put(count, cdt);
         count++;
       }
     }
@@ -101,20 +103,20 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
-  static HashMap<Integer,Coordinate>  makeCoordsRight(Coordinate upperLeft) {
-    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
+  static HashMap<Integer, Coordinate> makeCoordsRight(Coordinate upperLeft) {
+    HashMap<Integer, Coordinate> coords = new HashMap<Integer, Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    int count=0;
-    for (int i = c-2; i <= c + 2; i++) {
+    int count = 0;
+    for (int i = c - 2; i <= c + 2; i++) {
       if (i <= c) {
-        Coordinate cdt = new Coordinate(r+1, i);
-        coords.put(count,cdt);
+        Coordinate cdt = new Coordinate(r + 1, i);
+        coords.put(count, cdt);
         count++;
       }
       if (i >= c) {
         Coordinate cdt = new Coordinate(r, i);
-        coords.put(count,cdt);
+        coords.put(count, cdt);
         count++;
       }
     }
@@ -128,20 +130,20 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
-  static HashMap<Integer,Coordinate>  makeCoordsDown(Coordinate upperLeft) {
-    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
+  static HashMap<Integer, Coordinate> makeCoordsDown(Coordinate upperLeft) {
+    HashMap<Integer, Coordinate> coords = new HashMap<Integer, Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    int count=5;
+    int count = 5;
     for (int i = r; i <= r + 4; i++) {
       if (i <= r + 2) {
         Coordinate cdt = new Coordinate(i, c);
-        coords.put(count,cdt);
+        coords.put(count, cdt);
         count--;
       }
       if (i >= r + 2) {
         Coordinate cdt = new Coordinate(i, c - 1);
-        coords.put(count,cdt);
+        coords.put(count, cdt);
         count--;
       }
     }
@@ -155,20 +157,20 @@ public class CarrierShip<T> extends BasicShip<T> {
    * @param Coordinate indicates where to place this ship.
    * @return HashMap<Integer,Coordinate> Set of all Coordinates of this ship.
    */
-  static HashMap<Integer,Coordinate>  makeCoordsLeft(Coordinate upperLeft) {
-    HashMap<Integer,Coordinate> coords = new HashMap<Integer,Coordinate>();
+  static HashMap<Integer, Coordinate> makeCoordsLeft(Coordinate upperLeft) {
+    HashMap<Integer, Coordinate> coords = new HashMap<Integer, Coordinate>();
     int r = upperLeft.getRow();
     int c = upperLeft.getColumn();
-    int count=5;
+    int count = 5;
     for (int i = c; i <= c + 4; i++) {
       if (i <= c + 2) {
         Coordinate cdt = new Coordinate(r, i);
-        coords.put(count,cdt);
+        coords.put(count, cdt);
         count--;
       }
       if (i >= c + 2) {
-        Coordinate cdt = new Coordinate(r+1, i);
-        coords.put(count,cdt);
+        Coordinate cdt = new Coordinate(r + 1, i);
+        coords.put(count, cdt);
         count--;
       }
     }

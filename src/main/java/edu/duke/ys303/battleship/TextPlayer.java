@@ -33,7 +33,6 @@ public abstract class TextPlayer {
   private int moveTimes;
   /** Times left for scan. */
   private int scanTimes;
-  
 
   /**
    * Constructor for TextPlayer
@@ -59,7 +58,6 @@ public abstract class TextPlayer {
     moveTimes = 3;
     scanTimes = 3;
   }
-
 
   /**
    * Set up shipCreationMap. Put ship creation functions into a map.
@@ -93,21 +91,21 @@ public abstract class TextPlayer {
   /**
    * Update scanTimes by minus one.
    */
-  public void updateScanTimes(){
+  public void updateScanTimes() {
     scanTimes--;
   }
 
   /**
    * Update moveTimes by minus one.
    */
-  public void updateMoveTimes(){
+  public void updateMoveTimes() {
     moveTimes--;
   }
 
   /**
    * Getter for moveTimes
    */
-  public int getMoveTimes(){
+  public int getMoveTimes() {
     return moveTimes;
   }
 
@@ -116,7 +114,7 @@ public abstract class TextPlayer {
    */
   public int getScanTimes() {
     return scanTimes;
-  } 
+  }
 
   /**
    * Declare this player win
@@ -128,13 +126,15 @@ public abstract class TextPlayer {
   /**
    * Will be override in ComputerTextPlayer and HumanTextPlayer
    */
-  public void doPlacementPhase() throws IOException{
+  public void doPlacementPhase() throws IOException {
 
   }
+
   /**
    * Will be override in ComputerTextPlayer and HumanTextPlayer
    */
-  public void playOneTurn(Board<Character> theBoard,BoardTextView view, String myHeader, String enemyHeader) throws IOException{
+  public void playOneTurn(Board<Character> theBoard, BoardTextView view, String myHeader, String enemyHeader)
+      throws IOException {
 
   }
 }

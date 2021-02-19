@@ -21,7 +21,7 @@ public class BattleShipBoard<T> implements Board<T> {
   /** HashSet of misses for this Board. */
   HashSet<Coordinate> enemyMisses;
   /** HashSet of hits for this Board. */
-  HashMap<Coordinate,T> enemyHits;
+  HashMap<Coordinate, T> enemyHits;
   /** missInfo to display for this board. */
   final T missInfo;
 
@@ -68,7 +68,7 @@ public class BattleShipBoard<T> implements Board<T> {
     myShips = new ArrayList<Ship<T>>();
     this.placementChecker = placementChecker;
     enemyMisses = new HashSet<Coordinate>();
-    enemyHits = new HashMap<Coordinate,T>();
+    enemyHits = new HashMap<Coordinate, T>();
     this.missInfo = missInfo;
   }
 
@@ -92,7 +92,7 @@ public class BattleShipBoard<T> implements Board<T> {
    * @param Ship<T> to remove
    */
   @Override
-  public void removeShip(Ship<T> s){
+  public void removeShip(Ship<T> s) {
     myShips.remove(s);
   }
 
@@ -152,8 +152,8 @@ public class BattleShipBoard<T> implements Board<T> {
     if (!isSelf && enemyMisses.contains(where)) {
       return missInfo;
     }
-     if (!isSelf && enemyHits.containsKey(where)) {
-       return enemyHits.get(where);
+    if (!isSelf && enemyHits.containsKey(where)) {
+      return enemyHits.get(where);
     }
     return null;
   }
@@ -168,13 +168,13 @@ public class BattleShipBoard<T> implements Board<T> {
   @Override
   public Ship<T> findShip(Coordinate c) {
     for (Ship<T> s : myShips) {
-      if (s.occupiesCoordinates(c)) {        
+      if (s.occupiesCoordinates(c)) {
         return s;
       }
-    }    
+    }
     return null;
   }
-  
+
   /**
    * Search for any ship that occupies Coordinate c. If one is found, that Ship is
    * "hit" by the attack and record. Else, add Coordinate c into enemyMisses Set.
@@ -184,12 +184,12 @@ public class BattleShipBoard<T> implements Board<T> {
    */
   @Override
   public Ship<T> fireAt(Coordinate c) {
-    Ship<T> s=findShip(c);
-    if(s!=null){
+    Ship<T> s = findShip(c);
+    if (s != null) {
       s.recordHitAt(c);
-      enemyHits.put(c,s.getData());
+      enemyHits.put(c, s.getData());
       return s;
-    }    
+    }
     enemyMisses.add(c);
     return null;
   }

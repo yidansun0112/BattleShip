@@ -67,11 +67,12 @@ public class App {
    * This method carries out whether the TextPlayer is Human or Computer.
    * 
    * Prints out choices for user to choose. H for human, C for computer.
-   * @param String of the TextPlayer
+   * 
+   * @param String           of the TextPlayer
    * @param Board<Character> to play on
-   * @param BufferedReader for input
-   * @param PrintStream for output
-   * @param V2ShipFactory factory to build ships
+   * @param BufferedReader   for input
+   * @param PrintStream      for output
+   * @param V2ShipFactory    factory to build ships
    * @return TextPlayer
    */
   public static TextPlayer decideHumanComputer(String name, Board<Character> theBoard, BufferedReader inputReader,
@@ -102,18 +103,17 @@ public class App {
   /**
    * Main of App
    *
-   * Make a board, decide two players as human or computer.
-   * Ask two players to put their ships. Then each player alternate
-   * to attack. Player 1 starts first.
+   * Make a board, decide two players as human or computer. Ask two players to put
+   * their ships. Then each player alternate to attack. Player 1 starts first.
    */
   public static void main(String[] args) throws IOException {
     Board<Character> b1 = new BattleShipBoard<Character>(10, 20, 'X');
     Board<Character> b2 = new BattleShipBoard<Character>(10, 20, 'X');
     BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     V2ShipFactory factory = new V2ShipFactory();
-    TextPlayer p1=decideHumanComputer("A", b1, input, System.out, factory);
-    TextPlayer p2=decideHumanComputer("B", b2, input, System.out, factory);
-    App app = new App(p1,p2);
+    TextPlayer p1 = decideHumanComputer("A", b1, input, System.out, factory);
+    TextPlayer p2 = decideHumanComputer("B", b2, input, System.out, factory);
+    App app = new App(p1, p2);
     app.doPlacementPhase();
     app.doAttackingPhase();
   }
