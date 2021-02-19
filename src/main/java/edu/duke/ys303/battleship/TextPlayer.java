@@ -7,6 +7,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.function.Function;
 
 /**
@@ -34,6 +35,10 @@ public class TextPlayer {
   private int moveTimes;
   /** Times left for scan. */
   private int scanTimes;
+  /** indicate whether this player is computer ot not */
+  private boolean isComputer;
+  /** Random object to generate numbers */
+  private Random rdm;
 
   /**
    * Constructor for TextPlayer
@@ -58,6 +63,8 @@ public class TextPlayer {
     setupShipCreationList();
     moveTimes = 3;
     scanTimes = 3;
+    isComputer = false;
+    rdm = new Random();
   }
 
   public int getMoveTimes() {
@@ -97,6 +104,13 @@ public class TextPlayer {
    * @throws IllegalArgumentException when string for placement is not valid
    */
   public Placement readPlacement(String prompt) throws IllegalArgumentException, IOException {
+    if (isComputer) {
+      int row = rdm.nextInt(theBoard.getHeight());
+      int col = rdm.nextInt(theBoard.getWidth());
+      String oriChoice = "VHURDL";
+      char ori = oriChoice.charAt(rdm.nextInt(6));
+      return new Placement(new Coordinate(row, col), ori);
+    }
     out.println(prompt);
     String s = inputReader.readLine();
     if (s == null) {
@@ -114,12 +128,19 @@ public class TextPlayer {
    * @throws IllegalArgumentException when string for Coordinate is not valid
    */
   public Coordinate readCoordinate(String prompt) throws IllegalArgumentException, IOException {
-    out.println(prompt);
-    String s = inputReader.readLine();
-    if (s == null) {
-      throw new EOFException();
+    Coordinate c;
+    if (isComputer) {
+      int row = rdm.nextInt(theBoard.getHeight());
+      int col = rdm.nextInt(theBoard.getWidth());
+      c = new Coordinate(row, col);
+    } else {
+      out.println(prompt);
+      String s = inputReader.readLine();
+      if (s == null) {
+        throw new EOFException();
+      }
+      c = new Coordinate(s);
     }
-    Coordinate c = new Coordinate(s);
     if (c.getRow() > theBoard.getHeight() || c.getColumn() > theBoard.getWidth()) {
       throw new IllegalArgumentException("Coordinate goes off the board!");
     }
@@ -140,16 +161,20 @@ public class TextPlayer {
       Placement p = readPlacement("Player " + name + " where do you want to place a " + shipName + "?");
       Ship<Character> s = createFn.apply(p);
       String str = theBoard.tryAddShip(s);
-      if (str == null) {
-        out.print(view.displayMyOwnBoard());
-      } else {
-        out.println(str);
-        out.println("Please do that again.");
-        doOnePlacement(shipName, createFn);
+      if (!isComputer) {
+        if (str == null) {
+          out.print(view.displayMyOwnBoard());
+        } else {
+          out.println(str);
+          out.println("Please do that again.");
+          doOnePlacement(shipName, createFn);
+        }
       }
     } catch (IllegalArgumentException e) {
-      out.println("Exception thrown:" + e);
-      out.println("Please do that aganin.");
+      if (!isComputer) {
+        out.println("Exception thrown:" + e);
+        out.println("Please do that aganin.");
+      }
       doOnePlacement(shipName, createFn);
     }
   }
@@ -160,14 +185,16 @@ public class TextPlayer {
    * @throws IOException when placement is not valid.
    */
   public void doPlacementPhase() throws IOException {
-    BoardTextView view = new BoardTextView(theBoard);
-    out.println(view.displayMyOwnBoard());
-    out.println("Player " + name
-        + ": you are going to place the following ships (which are all rectangular). For each ship, type the coordinate of the upper left side of the ship, followed by either H (for horizontal) or V (for vertical).  For example M4H would place a ship horizontally starting at M4 and going to the right.  You have\n");
-    out.println("2 \"Submarines\" ships that are 1x2");
-    out.println("3 \"Destroyers\" ships that are 1x3");
-    out.println("3 \"Battleships\" ships that are 1x4");
-    out.println("2 \"Carriers\" ships that are 1x6");
+    if (!isComputer) {
+      BoardTextView view = new BoardTextView(theBoard);
+      out.println(view.displayMyOwnBoard());
+      out.println("Player " + name
+          + ": you are going to place the following ships (which are all rectangular). For each ship, type the coordinate of the upper left side of the ship, followed by either H (for horizontal) or V (for vertical).  For example M4H would place a ship horizontally starting at M4 and going to the right.  You have\n");
+      out.println("2 \"Submarines\" ships that are 1x2");
+      out.println("3 \"Destroyers\" ships that are 1x3");
+      out.println("3 \"Battleships\" ships that are 1x1+1x3");
+      out.println("2 \"Carriers\" ships that are 1x3+1x3");
+    }
     for (String shipName : shipsToPlaces) {
       doOnePlacement(shipName, shipCreationFns.get(shipName));
     }
@@ -193,10 +220,18 @@ public class TextPlayer {
   public void playOneFire(Board<Character> enemyBoard) throws IOException {
     Coordinate c = readCoordinate("Player " + name + " Please choose one place to fire at.");
     Ship<Character> s = enemyBoard.fireAt(c);
-    if (s == null) {
-      out.println("You missed!");
+    if (!isComputer) {
+      if (s == null) {
+        out.println("You missed!");
+      } else {
+        out.println("You hit a " + s.getName() + "!");
+      }
     } else {
-      out.println("You hit a " + s.getName() + "!");
+      if (s == null) {
+        out.println("Player " + name + " missed!");
+      } else {
+        out.println("Player " + name + " hit your " + s.getName() + " at " + c.toString() + "!");
+      }
     }
   }
 
@@ -219,34 +254,58 @@ public class TextPlayer {
     if (str == null) {
       theBoard.removeShip(oldShip);
       moveTimes--;
+      if (isComputer) {
+        out.println("Player " + name + " used a special action!");
+      }
     } else {
-      out.println(str);
+      if (!isComputer) {
+        out.println(str);
+      }
       throw new IllegalArgumentException("This placement is invalid");
     }
   }
 
   public void playOneTurn(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {
-    String text = view.displayMyBoardWithEnemyNextToIt(enemyView, myHeader, enemyHeader);
-    out.print(text);
-    out.println("Possible actions for Player A:\n");
-    out.println("F Fire at a square");
-    out.println("M Move a ship to another square (" + moveTimes + " remaining)");
-    out.println("S Sonar scan (" + scanTimes + " remaining)\n");
-    out.println("Player " + name + ", what would you like to do?");
+    if (!isComputer) {
+      String text = view.displayMyBoardWithEnemyNextToIt(enemyView, myHeader, enemyHeader);
+      out.print(text);
+    }
     try {
-      readChoice(enemyBoard, enemyView, myHeader, enemyHeader);
+      if (moveTimes == 0 && scanTimes == 0) {
+        playOneFire(enemyBoard);
+      } else {
+        if (!isComputer) {
+          out.println("Possible actions for Player " + name + ":\n");
+          out.println("F Fire at a square");
+          out.println("M Move a ship to another square (" + moveTimes + " remaining)");
+          out.println("S Sonar scan (" + scanTimes + " remaining)\n");
+          out.println("Player " + name + ", what would you like to do?");
+        }
+        readChoice(enemyBoard, enemyView, myHeader, enemyHeader);
+      }
     } catch (IllegalArgumentException e) {
-      out.println("Exception thrown" + e);
-      out.println("Please make your choice again.");
+      if (!isComputer) {
+        out.println("Exception thrown" + e);
+        out.println("Please make your choice again.");
+      }
       playOneTurn(enemyBoard, enemyView, myHeader, enemyHeader);
     }
   }
 
   public void readChoice(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {
-    String s = inputReader.readLine();
-    char c = s.charAt(0);
+    char c = ' ';
+    if (!isComputer) {
+      String s = inputReader.readLine();
+      if (s.length() != 1) {
+        throw new IllegalArgumentException("Choice should only be one letter");
+      }
+      c = s.charAt(0);
+    } else {
+      String choice = "FMS";
+      c = choice.charAt(rdm.nextInt(3));
+    }
     if (c == 'F' || c == 'f') {
       playOneFire(enemyBoard);
     } else if (c == 'M' || c == 'm') {
@@ -264,7 +323,36 @@ public class TextPlayer {
     }
   }
 
+  public void decideHumanComputer() throws IOException {
+    out.println("Do you want Player " + name + " a human player or to be played by the computer?");
+    out.println("H for human, C for computer");
+    out.println("Please make your choice:");
+    try {
+      String s = inputReader.readLine();
+      if (s.length() != 1) {
+        throw new IllegalArgumentException("Choice should only be one letter");
+      }
+      char c = s.charAt(0);
+      if (c == 'H' || c == 'h') {
+        isComputer = false;
+      } else if (c == 'C' || c == 'c') {
+        isComputer = true;
+      } else {
+        throw new IllegalArgumentException("Choice should be H or C!");
+      }
+    } catch (IllegalArgumentException e) {
+      out.println("Exception thrown:" + e);
+      out.println("Please do that again!");
+      decideHumanComputer();
+    }
+  }
+
   public void playOneScan(Board<Character> enemyBoard) throws IOException {
+    if (isComputer) {
+      out.println("Player " + name + " used a special action!");
+      scanTimes--;
+      return;
+    }
     Coordinate coord = readCoordinate("Player " + name + " please choose one center coordinate to sonar scan!");
     int r = coord.getRow();
     int c = coord.getColumn();
@@ -299,6 +387,6 @@ public class TextPlayer {
    * Declare this player win
    */
   public void declareWinner() {
-    out.print("Player " + name + " win the game!\n");
+    out.println("Player " + name + " win the game!");
   }
 }

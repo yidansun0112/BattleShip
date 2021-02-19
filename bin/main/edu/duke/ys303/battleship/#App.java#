@@ -27,11 +27,9 @@ public class App {
     player2 = p2;
   }
 
-  public void doDecidePhase() throws IOException {
-    player1.decideHumanComputer();
-    player2.decideHumanComputer();
+  publicd void doDecidePhase() throws IOException(){
+    p1.decideHumanComputer
   }
-
   /**
    * This method carries out the placement phase of the game. Player 1 puts 10
    * ships at first. Then player 2 puts.
@@ -81,8 +79,17 @@ public class App {
     V2ShipFactory factory = new V2ShipFactory();
     App app = new App(new TextPlayer("A", b1, input, System.out, factory),
         new TextPlayer("B", b2, input, System.out, factory));
-    app.doDecidePhase();
     app.doPlacementPhase();
     app.doAttackingPhase();
   }
 }
+
+
+
+
+
+
+
+
+
+
