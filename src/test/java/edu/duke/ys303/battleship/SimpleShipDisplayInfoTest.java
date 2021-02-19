@@ -8,9 +8,8 @@ public class SimpleShipDisplayInfoTest {
   @Test
   public void test_getInfo() {
     SimpleShipDisplayInfo<Character> ship=new SimpleShipDisplayInfo<Character>('a', 'b');
-    Coordinate c=new Coordinate(1,1);
-    assertEquals('a',ship.getInfo(c,false));
-    assertEquals('b',ship.getInfo(c,true));      
+    assertEquals('a',ship.getInfo(false));
+    assertEquals('b',ship.getInfo(true));      
   }
 
 }

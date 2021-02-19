@@ -60,6 +60,14 @@ public class TextPlayer {
     scanTimes = 3;
   }
 
+  public int getMoveTimes() {
+    return moveTimes;
+  }
+
+  public int getScanTimes() {
+    return scanTimes;
+  }
+
   /**
    * Set up shipCreationMap. Put ship creation functions into a map.
    */
@@ -225,7 +233,7 @@ public class TextPlayer {
     out.println("F Fire at a square");
     out.println("M Move a ship to another square (" + moveTimes + " remaining)");
     out.println("S Sonar scan (" + scanTimes + " remaining)\n");
-    out.println("Player "+name+", what would you like to do?");
+    out.println("Player " + name + ", what would you like to do?");
     try {
       readChoice(enemyBoard, enemyView, myHeader, enemyHeader);
     } catch (IllegalArgumentException e) {
@@ -238,27 +246,53 @@ public class TextPlayer {
   public void readChoice(Board<Character> enemyBoard, BoardTextView enemyView, String myHeader, String enemyHeader)
       throws IOException {
     String s = inputReader.readLine();
-    char c=s.charAt(0);
-    if (c == 'F'||c=='f') {
+    char c = s.charAt(0);
+    if (c == 'F' || c == 'f') {
       playOneFire(enemyBoard);
-    } else if (c == 'M'||c=='m') {
+    } else if (c == 'M' || c == 'm') {
       if (moveTimes == 0) {
         throw new IllegalArgumentException("You don't have any move leaving!");
       }
       playOneMove();
-    } else if (c == 'S'||c=='s') {
+    } else if (c == 'S' || c == 's') {
       if (scanTimes == 0) {
         throw new IllegalArgumentException("You don't have any sonar scan leaving!");
       }
-      playOneScan();
-    }
-    else{
+      playOneScan(enemyBoard);
+    } else {
       throw new IllegalArgumentException("Wrong Choice, You should choose between F, M and S");
     }
   }
 
-  public void playOneScan() {
+  public void playOneScan(Board<Character> enemyBoard) throws IOException {
+    Coordinate coord = readCoordinate("Player " + name + " please choose one center coordinate to sonar scan!");
+    int r = coord.getRow();
+    int c = coord.getColumn();
+    HashMap<Character, Integer> shipCount = new HashMap<Character, Integer>();
+    for (int i = -3; i <= 3; i++) {
+      for (int j = -3; j <= 3; j++) {
+        if (j - i <= 3 && j - i >= -3 && j + i <= 3 && j + i >= -3) {
+          int row = r + j;
+          int col = c + i;
+          if (row >= 0 && row <= 19 && col >= 0 && col <= 9) {
+            Coordinate toCheck = new Coordinate(row, col);
+            Character chr = enemyBoard.whatIsAtForSelf(toCheck);
+            if (chr != null && chr != '*') {
+              shipCount.put(chr, shipCount.getOrDefault(chr, 0) + 1);
+            }
+          }
+        }
+      }
+    }
+    printResult(shipCount);
+    scanTimes--;
+  }
 
+  public void printResult(HashMap<Character, Integer> shipCount) {
+    out.println("Submarines occupy " + shipCount.getOrDefault('s', 0) + " squares");
+    out.println("Destroyers occupy " + shipCount.getOrDefault('d', 0) + " squares");
+    out.println("Battleships occupy " + shipCount.getOrDefault('b', 0) + " squares");
+    out.println("Carriers occupy " + shipCount.getOrDefault('c', 0) + " squares");
   }
 
   /**

@@ -60,10 +60,27 @@ public class TextPlayerTest {
   }
 
   @Test
-  public void test_isLose() throws IOException{
-     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+  public void test_isLose() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     TextPlayer player = createTextPlayer(4, 3, "A1V\n", bytes);
     player.doOnePlacement("Destroyer", (p) -> player.shipFactory.makeDestroyer(p));
-    assertEquals(false,player.isLose());
+    assertEquals(false, player.isLose());
+  }
+
+  @Test
+  public void test_sonar_scan() throws IOException {
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    TextPlayer player = createTextPlayer(10, 20, "d3\n", bytes);
+    player.theBoard.tryAddShip(player.shipFactory.makeSubmarine(new Placement("A1V")));
+    player.theBoard.tryAddShip(player.shipFactory.makeSubmarine(new Placement("C3V")));
+    player.theBoard.tryAddShip(player.shipFactory.makeSubmarine(new Placement("C1h")));
+    player.theBoard.tryAddShip(player.shipFactory.makeSubmarine(new Placement("C5h")));
+    player.theBoard.tryAddShip(player.shipFactory.makeSubmarine(new Placement("f2v")));
+    player.theBoard.tryAddShip(player.shipFactory.makeSubmarine(new Placement("f4v")));
+    player.playOneScan(player.theBoard);
+    String expected = "Submarines occupy 7 squares\nDestroyers occupy 0 squares\nBattleships occupy 0 squares\nCarriers occupy 0 squares\n";
+    String prompt = "Player A please choose one center coordinate to sonar scan!\n";
+    assertEquals(prompt + expected, bytes.toString());
+    assertEquals(2,player.getScanTimes());
   }
 }
