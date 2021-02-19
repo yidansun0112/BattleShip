@@ -1,6 +1,16 @@
 Do you want Player A a human player or to be played by the computer?
 H for human, C for computer
 Please make your choice:
+Exception thrown:java.lang.IllegalArgumentException: Choice should be H or C!
+Please do that again!
+Do you want Player A a human player or to be played by the computer?
+H for human, C for computer
+Please make your choice:
+Do you want Player B a human player or to be played by the computer?
+H for human, C for computer
+Please make your choice:
+Exception thrown:java.lang.IllegalArgumentException: Choice should only be one letter
+Please do that again!
 Do you want Player B a human player or to be played by the computer?
 H for human, C for computer
 Please make your choice:
@@ -561,6 +571,70 @@ M Move a ship to another square (3 remaining)
 S Sonar scan (3 remaining)
 
 Player A, what would you like to do?
+Exception thrownjava.lang.IllegalArgumentException: Choice should only be one letter
+Please make your choice again.
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| | | | | | | |  A                A  | | | | | | | | |  A
+B s|s| | | | | | | |  B                B  | | | | | | | | |  B
+C d|d|d| | | | | | |  C                C  | | | | | | | | |  C
+D d|d|d| | | | | | |  D                D  | | | | | | | | |  D
+E d|d|d| | | | | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+Possible actions for Player A:
+
+F Fire at a square
+M Move a ship to another square (3 remaining)
+S Sonar scan (3 remaining)
+
+Player A, what would you like to do?
+Exception thrownjava.lang.IllegalArgumentException: Wrong Choice, You should choose between F, M and S
+Please make your choice again.
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| | | | | | | |  A                A  | | | | | | | | |  A
+B s|s| | | | | | | |  B                B  | | | | | | | | |  B
+C d|d|d| | | | | | |  C                C  | | | | | | | | |  C
+D d|d|d| | | | | | |  D                D  | | | | | | | | |  D
+E d|d|d| | | | | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+Possible actions for Player A:
+
+F Fire at a square
+M Move a ship to another square (3 remaining)
+S Sonar scan (3 remaining)
+
+Player A, what would you like to do?
 Player A Please choose one place to fire at.
 You hit a Submarine!
      Your ocean                           Player A's ocean
@@ -693,9 +767,9 @@ S Sonar scan (3 remaining)
 
 Player B, what would you like to do?
 Player B please choose one center coordinate to sonar scan!
-Submarines occupy 0 squares
-Destroyers occupy 6 squares
-Battleships occupy 4 squares
+Submarines occupy 3 squares
+Destroyers occupy 1 squares
+Battleships occupy 0 squares
 Carriers occupy 0 squares
      Your ocean                           Player B's ocean
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9

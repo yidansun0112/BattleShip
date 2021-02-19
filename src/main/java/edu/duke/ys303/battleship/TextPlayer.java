@@ -50,7 +50,7 @@ public class TextPlayer {
    * @param V1ShipFactory  to initialize shipFactory
    */
   public TextPlayer(String name, Board<Character> theBoard, BufferedReader inputReader, PrintStream out,
-      V2ShipFactory factory) {
+      V2ShipFactory factory, boolean seed) {
     this.name = name;
     this.theBoard = theBoard;
     this.view = new BoardTextView(theBoard);
@@ -64,15 +64,16 @@ public class TextPlayer {
     moveTimes = 3;
     scanTimes = 3;
     isComputer = false;
-    rdm = new Random();
+    if (seed) {
+      rdm = new Random(50);
+    } else {
+      rdm = new Random();
+    }
   }
 
-  public int getMoveTimes() {
-    return moveTimes;
-  }
-
-  public int getScanTimes() {
-    return scanTimes;
+  public TextPlayer(String name, Board<Character> theBoard, BufferedReader inputReader, PrintStream out,
+      V2ShipFactory factory) {
+    this(name, theBoard, inputReader, out, factory, false);
   }
 
   /**

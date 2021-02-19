@@ -1,6 +1,16 @@
 Do you want Player A a human player or to be played by the computer?
 H for human, C for computer
 Please make your choice:
+Exception thrown:java.lang.IllegalArgumentException: Choice should be H or C!
+Please do that again!
+Do you want Player A a human player or to be played by the computer?
+H for human, C for computer
+Please make your choice:
+Do you want Player B a human player or to be played by the computer?
+H for human, C for computer
+Please make your choice:
+Exception thrown:java.lang.IllegalArgumentException: Choice should only be one letter
+Please do that again!
 Do you want Player B a human player or to be played by the computer?
 H for human, C for computer
 Please make your choice:
@@ -561,6 +571,70 @@ M Move a ship to another square (3 remaining)
 S Sonar scan (3 remaining)
 
 Player A, what would you like to do?
+Exception thrownjava.lang.IllegalArgumentException: Choice should only be one letter
+Please make your choice again.
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| | | | | | | |  A                A  | | | | | | | | |  A
+B s|s| | | | | | | |  B                B  | | | | | | | | |  B
+C d|d|d| | | | | | |  C                C  | | | | | | | | |  C
+D d|d|d| | | | | | |  D                D  | | | | | | | | |  D
+E d|d|d| | | | | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+Possible actions for Player A:
+
+F Fire at a square
+M Move a ship to another square (3 remaining)
+S Sonar scan (3 remaining)
+
+Player A, what would you like to do?
+Exception thrownjava.lang.IllegalArgumentException: Wrong Choice, You should choose between F, M and S
+Please make your choice again.
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A s|s| | | | | | | |  A                A  | | | | | | | | |  A
+B s|s| | | | | | | |  B                B  | | | | | | | | |  B
+C d|d|d| | | | | | |  C                C  | | | | | | | | |  C
+D d|d|d| | | | | | |  D                D  | | | | | | | | |  D
+E d|d|d| | | | | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+Possible actions for Player A:
+
+F Fire at a square
+M Move a ship to another square (3 remaining)
+S Sonar scan (3 remaining)
+
+Player A, what would you like to do?
 Player A Please choose one place to fire at.
 You hit a Submarine!
      Your ocean                           Player A's ocean
@@ -693,9 +767,9 @@ S Sonar scan (3 remaining)
 
 Player B, what would you like to do?
 Player B please choose one center coordinate to sonar scan!
-Submarines occupy 0 squares
-Destroyers occupy 6 squares
-Battleships occupy 4 squares
+Submarines occupy 3 squares
+Destroyers occupy 1 squares
+Battleships occupy 0 squares
 Carriers occupy 0 squares
      Your ocean                           Player B's ocean
   0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
@@ -1224,6 +1298,29 @@ Submarines occupy 0 squares
 Destroyers occupy 0 squares
 Battleships occupy 3 squares
 Carriers occupy 5 squares
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A  | | | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C  | | | | | | | | |  C
+D d|d|d| | |c|c|c| |  D                D  | | | | | | | | |  D
+E d|d|d|c|c|c| | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Submarine!
      Your ocean                           Player B's ocean
@@ -1261,196 +1358,2381 @@ Submarines occupy 0 squares
 Destroyers occupy 1 squares
 Battleships occupy 4 squares
 Carriers occupy 4 squares
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s| | | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C  | | | | | | | | |  C
+D d|d|d| | |c|c|c| |  D                D  | | | | | | | | |  D
+E d|d|d|c|c|c| | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Submarine!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|s| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C d|d|d| | | | | | |  C                C d| | | | | | | | |  C
+D d|d|d| | | | | | |  D                D  | | | | | | | | |  D
+E d|d|d| | |*| | | |  E                E  | | | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C  | | | | | | | | |  C
+D d|d|d| | |c|c|c| |  D                D  | | | | | | | | |  D
+E d|d|d|c|c|c| | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|d| | | | | | |  C                C d| | | | | | | | |  C
+D d|d|d| | | | | | |  D                D  | | | | | | | | |  D
+E d|d|d| | |*| | | |  E                E  | | | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| | | | | | | | |  C
+D d|d|d| | |c|c|c| |  D                D  | | | | | | | | |  D
+E d|d|d|c|c|c| | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|d|d| | | | | | |  D                D  | | | | | | | | |  D
+E d|d|d| | |*| | | |  E                E  | | | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|d| | |c|c|c| |  D                D  | | | | | | | | |  D
+E d|d|d|c|c|c| | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| | | | | | | | |  D
+E d|d|d| | |*| | | |  E                E  | | | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|d|d|c|c|c| | | |  E                E  | | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|d| | |*| | | |  E                E  | | | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| | | | | | | | |  E
+F  | | |b| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|b|b|*|*| | |  G                G  | | | | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | |b| | | | | |  F
+G  | |*|b|b| | | | |  G                G  | | | | | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| | | | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |s| | | |  F                F  | | |b| | | | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | | | | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | | | | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Submarine!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| | | | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Submarine!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|d|*| | | | | | |  C                C d|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d| |d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 Exception thrownjava.lang.IllegalArgumentException: Coordinate goes off the board!
 Please make your choice again.
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X| | | | | | | |  C
+D d|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D  |d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|d|*| | |c|c|c| |  D                D d|d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|d| | | | | | |  D                D d| |d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d| | | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E d|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|d|*| | |*| | | |  E                E  |d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|d|c|c|c| | | |  E                E d| |d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d| | | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Destroyer!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | | | | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You missed!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |b| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | | | |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |b|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Submarine!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | | |b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|b|*| | | | |  G                G  | |b|b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|b|*|*| | |  G                G  | |b| |b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b| | | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |b| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | | | | | | | | |  H
+I b|b| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |b|b|b| | | | | |  I                I  | | | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  | | | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|b|b| | | | | |  I                I  |b| | | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b| | | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|b| | | | | |  I                I  |b|X| | | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b| | | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |b| | | | | |  K                K  | | | | | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | | | | | | | |  K
+L  | |b| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |b|b|b| | | | |  L                L  | | | | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | | | | | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |b|*|b| | | | |  L                L  | |b| | | | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | | |b| | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|b| | | | |  L                L  | |b| |X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b| | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|b| | | | |  L                L  | |b| |X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b| | | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O c|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O  | | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O *|c|c| | | | | | |  O                O  | | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O c| | | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O *|*|c| | | | | | |  O                O X| | | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O c|c| | | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |c|c|c| | | | |  N                N  | | | | | | | | |  N
+O *|*|*| | | | | | |  O                O X|X| | | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |b| | | | | | |  N                N  | | | | | | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|c|c| | | | |  N                N  | | | | | | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Battleship!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c| | | | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|*|c| | | | |  N                N  | |b| | | | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c| | | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|*|*| | | | |  N                N  | |b|X| | | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |c|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |s| | | | |  P                P  | | | | | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|*|*| | | | |  N                N  | |b|X|X| | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |*|c|c| | | |  P                P  | | | | | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |s| | | | |  P                P  | | |c| | | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|*|*| | | | |  N                N  | |b|X|X| | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |*|*|c| | | |  P                P  | | |X| | | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You hit a Submarine!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |*| | | | |  P                P  | | |c|c| | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 Exception thrownjava.lang.IllegalArgumentException: Coordinate String must contain only two characters, but now the length is0
 Please make your choice again.
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |*| | | | |  P                P  | | |c|c| | | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|*|*| | | | |  N                N  | |b|X|X| | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |*|*|*| | | |  P                P  | | |X|s| | | | |  P
+Q  | | | | |c|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |*| | | | |  P                P  | | |c|c|c| | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | | | | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|*|*| | | | |  N                N  | |b|X|X| | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |*|*|*| | | |  P                P  | | |X|s|X| | | |  P
+Q  | | | | |*|c|c| |  Q                Q  | | | | | | | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |*| | | | |  P                P  | | |c|c|c| | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | |c| | | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
+     Your ocean                           Player B's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A *|*| | | | | | | |  A                A s|X| | | | | | | |  A
+B  | | | | | | | | |  B                B s| | | | | | | | |  B
+C *|*|*| | | | | | |  C                C X|X|X| | | | | | |  C
+D *|*|*| | | | | | |  D                D d|d|d| | | | | | |  D
+E *|*|*| | |*| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| |*| | | |  F                F  | | |b| |X| | | |  F
+G  | |*|*|*| | | | |  G                G  | |b|b|b| | | | |  G
+H  | |*| | | | | | |  H                H  | |X| | | | | | |  H
+I  |*|*|*| | | | | |  I                I  |b|X|X| | | | | |  I
+J  | | | | | | | | |  J                J  | | | | | | | | |  J
+K  | | |*| | | | | |  K                K  | | |X| | | | | |  K
+L  | |*|*|*| | | | |  L                L  | |b|X|X| | | | |  L
+M  | | | | | | | | |  M                M  | | | | | | | | |  M
+N  | |*|*|*| | | | |  N                N  | |b|X|X| | | | |  N
+O *|*|*| | | | | | |  O                O X|X|X| | | | | | |  O
+P  | | |*|*|*| | | |  P                P  | | |X|s|X| | | |  P
+Q  | | | | |*|*|c| |  Q                Q  | | | | |X| | | |  Q
+R  | | | | | | | | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player A Please choose one place to fire at.
 You missed!
+     Your ocean                           Player A's ocean
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
+A  | | | | |c|c|c| |  A                A s|s| | | | | | | |  A
+B  | | | | | | |c|c|c B                B s| | |X| | | | | |  B
+C  | | | | | | | | |  C                C d|d|d| | | | | | |  C
+D *|*|*| | |c|c|c| |  D                D d|d|d| | | | | | |  D
+E *|*|*|c|c|c| | | |  E                E d|d|d| | | | | | |  E
+F  | | |*| | | | | |  F                F  | | |b| |s| | | |  F
+G  | |*|*|*|*|*| | |  G                G  | |b|b|b| | | | |  G
+H  |b| | | | | | | |  H                H  | |b| | | | | | |  H
+I b|*| | | | | | | |  I                I  |b|b|b| | | | | |  I
+J  |b| | | | | | | |  J                J  | | | | | | | | |  J
+K  | | | | | | | | |  K                K  | | |b| | | | | |  K
+L  | |*| | | | | | |  L                L  | |b|b|b| | | | |  L
+M  |b|b| | | | | | |  M                M  | | | | | | | | |  M
+N  | |*| | | | | | |  N                N  | |c|c|c| | | | |  N
+O  | | | |*| | | | |  O                O c|c|c| | | | | | |  O
+P  | | | |*| | | | |  P                P  | | |c|c|c| | | |  P
+Q  | | | | | | | | |  Q                Q  | | | | |c|c| | |  Q
+R  | | | |*|d|d| | |  R                R  | | | | | | | | |  R
+S  | | | | | | | | |  S                S  | | | | | | | | |  S
+T  | | | | | | | | |  T                T  | | | | | | | | |  T
+  0|1|2|3|4|5|6|7|8|9                    0|1|2|3|4|5|6|7|8|9
 Player B Please choose one place to fire at.
 You hit a Carrier!
 Player B win the game!

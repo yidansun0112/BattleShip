@@ -19,14 +19,13 @@ import org.junit.jupiter.api.parallel.ResourceAccessMode;
 
 class AppTest {
 
-  @Test
   @ResourceLock(value = Resources.SYSTEM_OUT, mode = ResourceAccessMode.READ_WRITE)
-  void test_main() throws IOException {
+  void test_main(String inputName, String outputName) throws IOException {
     ByteArrayOutputStream bytes = new ByteArrayOutputStream();
     PrintStream out = new PrintStream(bytes, true);
-    InputStream input = getClass().getClassLoader().getResourceAsStream("input.txt");
+    InputStream input = getClass().getClassLoader().getResourceAsStream(inputName);
     assertNotNull(input);
-    InputStream expectedStream = getClass().getClassLoader().getResourceAsStream("output.txt");
+    InputStream expectedStream = getClass().getClassLoader().getResourceAsStream(outputName);
     assertNotNull(expectedStream);
     InputStream oldIn = System.in;
     PrintStream oldOut = System.out;
@@ -42,4 +41,9 @@ class AppTest {
     String actual = bytes.toString();
     assertEquals(expected, actual);
   }
+
+  @Test
+  void test_h_h() throws IOException {
+    test_main("input.txt", "output.txt");
+  }  
 }

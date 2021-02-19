@@ -1,4 +1,6 @@
+f
 h
+hh
 h
 a0h
 b0h
@@ -23,6 +25,8 @@ h1l
 l2l
 a5l
 d5r
+ff
+a
 f
 a0
 f
@@ -34,7 +38,7 @@ m
 c2
 c4v
 s
-e3
+a3
 m
 b1
 e5v
