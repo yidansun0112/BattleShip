@@ -188,9 +188,11 @@ public class BattleShipBoard<T> implements Board<T> {
     if (s != null) {
       s.recordHitAt(c);
       enemyHits.put(c, s.getData());
+      enemyMisses.remove(c);
       return s;
     }
     enemyMisses.add(c);
+    enemyHits.remove(c);
     return null;
   }
 
